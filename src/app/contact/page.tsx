@@ -29,14 +29,14 @@ export default function ContactPage() {
           <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               {/* Contact Info */}
-              <div className="flex flex-col h-full">
+              <div>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                   <span className="text-xs font-semibold tracking-widest uppercase text-[#cc0000]">Contact Us</span>
                   <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-primary leading-tight">Get in Touch</h1>
                   <p className="mt-4 text-lg text-secondary">Our experts are always ready to work with you. Please fill the form and we will get back to you soon.</p>
                 </motion.div>
 
-                <div className="mt-auto space-y-4">
+                <div className="mt-10 space-y-4">
                   <GlassCard className="p-5 flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#cc0000]/20 to-[#e60000]/10 flex items-center justify-center shrink-0">
                       <HiLocationMarker className="w-5 h-5 text-[#cc0000]" />
