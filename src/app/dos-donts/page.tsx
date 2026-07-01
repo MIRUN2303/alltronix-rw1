@@ -27,11 +27,11 @@ export default function DosDontsPage() {
                     <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center">
                       <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     </div>
-                    <h2 className="text-2xl font-bold text-[#1a1a1a]">Do's</h2>
+                    <h2 className="text-2xl font-bold text-primary">Do's</h2>
                   </div>
                   <ul className="space-y-4">
                     {ewasteData.dos.map((item, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-[#666]">
+                      <li key={i} className="flex gap-3 text-sm text-secondary">
                         <span className="w-5 h-5 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center shrink-0 text-xs font-bold">&#10003;</span>
                         {item}
                       </li>
@@ -46,11 +46,11 @@ export default function DosDontsPage() {
                     <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center">
                       <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                     </div>
-                    <h2 className="text-2xl font-bold text-[#1a1a1a]">Don'ts</h2>
+                    <h2 className="text-2xl font-bold text-primary">Don'ts</h2>
                   </div>
                   <ul className="space-y-4">
                     {ewasteData.donts.map((item, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-[#666]">
+                      <li key={i} className="flex gap-3 text-sm text-secondary">
                         <span className="w-5 h-5 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 text-xs font-bold">&#10007;</span>
                         {item}
                       </li>

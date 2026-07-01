@@ -37,8 +37,8 @@ export default function ProductsSection() {
               <Link href={`/products/${cat.slug}`}>
                 <GlassCard className="p-6 h-full group" hover>
                   <div className="text-3xl mb-4">{categoryIcons[cat.id]}</div>
-                  <h3 className="text-lg font-semibold text-[#1a1a1a] mb-2 group-hover:text-[#005bb5] transition-colors">{cat.name}</h3>
-                  <p className="text-sm text-[#666] leading-relaxed mb-4">{cat.description}</p>
+                  <h3 className="text-lg font-semibold text-primary mb-2 group-hover:text-[#005bb5] transition-colors">{cat.name}</h3>
+                  <p className="text-sm text-secondary leading-relaxed mb-4">{cat.description}</p>
                   <span className="inline-flex items-center gap-1 text-xs text-[#005bb5] group-hover:gap-2 transition-all">
                     Explore <HiArrowRight className="w-3 h-3" />
                   </span>

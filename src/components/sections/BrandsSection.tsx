@@ -22,13 +22,13 @@ export default function BrandsSection() {
           className="text-center mb-14"
         >
           <div className="flex items-center justify-center gap-3 mb-3">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#555]">OUR PARTNERS</span>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-secondary">OUR PARTNERS</span>
             <div className="w-10 h-0.5 bg-[#cc0000]" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary">
             Partnering with Global Industry Leaders
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#666] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-secondary max-w-2xl mx-auto leading-relaxed">
             We have partnered with 31+ leading global brands who are among the top players in their respective fields, enabling us to bring world-class solutions to our clients.
           </p>
         </motion.div>
@@ -48,7 +48,7 @@ export default function BrandsSection() {
               {doubled.map((brand, i) => (
                 <div
                   key={`r1-${i}`}
-                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-[#e5e5e5] rounded-xl hover:border-[#005bb5]/30 hover:shadow-md transition-all duration-300 group"
+                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-subtle rounded-xl hover:border-[#005bb5]/30 hover:shadow-md transition-all duration-300 group"
                 >
                   <img
                     src={brand.logo}
@@ -62,7 +62,7 @@ export default function BrandsSection() {
                       if (nameEl) nameEl.style.display = 'block'
                     }}
                   />
-                  <span className="brand-fallback-name hidden text-xs font-semibold text-[#888] text-center">{brand.name}</span>
+                  <span className="brand-fallback-name hidden text-xs font-semibold text-muted text-center">{brand.name}</span>
                 </div>
               ))}
             </motion.div>
@@ -80,7 +80,7 @@ export default function BrandsSection() {
               {[...doubled].reverse().map((brand, i) => (
                 <div
                   key={`r2-${i}`}
-                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-[#e5e5e5] rounded-xl hover:border-[#005bb5]/30 hover:shadow-md transition-all duration-300 group"
+                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-subtle rounded-xl hover:border-[#005bb5]/30 hover:shadow-md transition-all duration-300 group"
                 >
                   <img
                     src={brand.logo}
@@ -94,7 +94,7 @@ export default function BrandsSection() {
                       if (nameEl) nameEl.style.display = 'block'
                     }}
                   />
-                  <span className="brand-fallback-name hidden text-xs font-semibold text-[#888] text-center">{brand.name}</span>
+                  <span className="brand-fallback-name hidden text-xs font-semibold text-muted text-center">{brand.name}</span>
                 </div>
               ))}
             </motion.div>

@@ -21,6 +21,7 @@ export const mainNavigation: NavItem[] = [
   },
   { label: 'Solutions', href: '/solutions' },
   { label: 'eWaste', href: '/ewaste' },
+  { label: 'Newsletter', href: '/newsletter' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
@@ -32,6 +33,7 @@ export const footerQuickLinks = [
   { label: 'Careers', href: '/careers' },
   { label: 'Contact us', href: '/contact' },
   { label: 'Culture', href: '/culture' },
+  { label: 'Newsletter', href: '/newsletter' },
   { label: 'Products', href: '/products' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Certifications', href: '/certifications' },

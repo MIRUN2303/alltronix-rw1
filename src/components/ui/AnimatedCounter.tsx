@@ -46,7 +46,7 @@ export default function AnimatedCounter({
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1a1a1a] ${className}`}
+      className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-primary ${className}`}
     >
       {count}{suffix}
     </motion.span>

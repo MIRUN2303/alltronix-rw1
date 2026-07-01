@@ -39,14 +39,14 @@ export default function SolutionsPage() {
                     <ScrollReveal direction={index % 2 === 0 ? 'left' : 'right'}>
                       <GlassCard className="p-8 lg:p-12">
                         <div className="text-4xl mb-6">{solutionIcons[sol.slug]}</div>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-[#1a1a1a] mb-4">{sol.title}</h2>
-                        <p className="text-[#666] leading-relaxed mb-6">{sol.description}</p>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">{sol.title}</h2>
+                        <p className="text-secondary leading-relaxed mb-6">{sol.description}</p>
                         <Button variant="outline" href="/contact">Contact Us About {sol.title}</Button>
                       </GlassCard>
                     </ScrollReveal>
                     <ScrollReveal direction={index % 2 === 0 ? 'right' : 'left'}>
                       <div className="aspect-video rounded-2xl bg-gradient-to-br from-[#005bb5]/10 to-[#0072e3]/5 border border-[rgba(204,0,0,0.08)] flex items-center justify-center">
-                        <span className="text-[#666]">Solution visualization</span>
+                        <span className="text-secondary">Solution visualization</span>
                       </div>
                     </ScrollReveal>
                   </div>

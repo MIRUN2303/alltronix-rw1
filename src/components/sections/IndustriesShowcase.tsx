@@ -135,7 +135,7 @@ export default function IndustriesShowcase() {
           className="text-center mb-16"
         >
           <span className="text-xs font-semibold tracking-widest uppercase text-[#005bb5]">Industries We Serve</span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a]">
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">
             Engineering Solutions Across{' '}
             <span className="bg-gradient-to-r from-[#005bb5] to-[#0072e3] bg-clip-text text-transparent">Critical Sectors</span>
           </h2>
@@ -162,7 +162,7 @@ export default function IndustriesShowcase() {
                       className={`w-9 h-9 rounded-full flex items-center justify-center text-sm transition-all duration-500 ${
                         isActive
                           ? 'shadow-lg scale-110'
-                          : 'bg-[#f5f5f5] text-[#999]'
+                          : 'bg-[#f5f5f5] text-muted'
                       }`}
                       style={isActive ? { background: `linear-gradient(135deg, ${colors.from}, ${colors.to})` } : {}}
                     >
@@ -187,14 +187,14 @@ export default function IndustriesShowcase() {
                   <div className="flex-1 min-w-0">
                     <span
                       className={`text-base lg:text-lg font-semibold transition-all duration-500 ${
-                        isActive ? 'text-[#1a1a1a]' : 'text-[#888] group-hover:text-[#555]'
+                        isActive ? 'text-primary' : 'text-muted group-hover:text-secondary'
                       }`}
                     >
                       {ind.name}
                     </span>
                     <p
                       className={`text-sm mt-0.5 transition-all duration-500 overflow-hidden ${
-                        isActive ? 'text-[#555] max-h-12' : 'text-transparent max-h-0'
+                        isActive ? 'text-secondary max-h-12' : 'text-transparent max-h-0'
                       }`}
                     >
                       {ind.description}
@@ -238,7 +238,7 @@ export default function IndustriesShowcase() {
                 />
 
                 {/* SVG art */}
-                <div className="absolute inset-0 flex items-center justify-center text-[#1a1a1a] opacity-10">
+                <div className="absolute inset-0 flex items-center justify-center text-primary opacity-10">
                   {industrySvgs[industries[active].slug]}
                 </div>
 
@@ -247,10 +247,10 @@ export default function IndustriesShowcase() {
                   <div className="text-6xl mb-6">
                     {industryIcons[industries[active].slug]}
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-[#1a1a1a] leading-tight">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-primary leading-tight">
                     {industries[active].name}
                   </h3>
-                  <p className="mt-4 text-base lg:text-lg text-[#555] leading-relaxed max-w-md">
+                  <p className="mt-4 text-base lg:text-lg text-secondary leading-relaxed max-w-md">
                     {industries[active].description}
                   </p>
 
@@ -266,7 +266,7 @@ export default function IndustriesShowcase() {
                         >
                           {stat.value}
                         </div>
-                        <div className="text-xs text-[#888] mt-0.5">{stat.label}</div>
+                        <div className="text-xs text-muted mt-0.5">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -311,8 +311,8 @@ export default function IndustriesShowcase() {
               onClick={() => setActive(i)}
               className={`p-3 rounded-xl text-center transition-all border ${
                 i === active
-                  ? 'border-[#005bb5]/30 bg-[#005bb5]/10 text-[#1a1a1a]'
-                  : 'border-[#e5e5e5] text-[#888]'
+                  ? 'border-[#005bb5]/30 bg-[#005bb5]/10 text-primary'
+                  : 'border-subtle text-muted'
               }`}
             >
               <div className="text-lg mb-0.5">{industryIcons[ind.slug]}</div>

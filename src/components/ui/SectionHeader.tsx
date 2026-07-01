@@ -35,7 +35,7 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a] leading-tight"
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight"
       >
         {title}
       </motion.h2>
@@ -45,7 +45,7 @@ export default function SectionHeader({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-4 text-lg text-[#666] leading-relaxed max-w-2xl mx-auto"
+          className="mt-4 text-lg text-secondary leading-relaxed max-w-2xl mx-auto"
         >
           {description}
         </motion.p>

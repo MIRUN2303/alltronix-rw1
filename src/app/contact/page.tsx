@@ -32,8 +32,8 @@ export default function ContactPage() {
               <div className="lg:col-span-2 space-y-8">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                   <span className="text-xs font-semibold tracking-widest uppercase text-[#005bb5]">Contact Us</span>
-                  <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-[#1a1a1a] leading-tight">Get in Touch</h1>
-                  <p className="mt-4 text-lg text-[#666]">Our experts are always ready to work with you. Please fill the form and we will get back to you soon.</p>
+                  <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-primary leading-tight">Get in Touch</h1>
+                  <p className="mt-4 text-lg text-secondary">Our experts are always ready to work with you. Please fill the form and we will get back to you soon.</p>
                 </motion.div>
 
                 <div className="space-y-4">
@@ -42,8 +42,8 @@ export default function ContactPage() {
                       <HiLocationMarker className="w-5 h-5 text-[#005bb5]" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#1a1a1a]">Alltronix Head Office</h3>
-                      <p className="text-sm text-[#666] mt-1">{companyInfo.contact.address}</p>
+                      <h3 className="text-sm font-semibold text-primary">Alltronix Head Office</h3>
+                      <p className="text-sm text-secondary mt-1">{companyInfo.contact.address}</p>
                     </div>
                   </GlassCard>
 
@@ -52,7 +52,7 @@ export default function ContactPage() {
                       <HiPhone className="w-5 h-5 text-[#005bb5]" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#1a1a1a]">Phone</h3>
+                      <h3 className="text-sm font-semibold text-primary">Phone</h3>
                       <a href={`tel:${companyInfo.contact.phone}`} className="text-sm text-[#005bb5] hover:text-[#0072e3] transition-colors mt-1 block">{companyInfo.contact.phone}</a>
                     </div>
                   </GlassCard>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                       <HiMail className="w-5 h-5 text-[#005bb5]" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#1a1a1a]">Email</h3>
+                      <h3 className="text-sm font-semibold text-primary">Email</h3>
                       <a href={`mailto:${companyInfo.contact.email}`} className="text-sm text-[#005bb5] hover:text-[#0072e3] transition-colors mt-1 block">{companyInfo.contact.email}</a>
                     </div>
                   </GlassCard>
@@ -72,8 +72,8 @@ export default function ContactPage() {
                       <HiClock className="w-5 h-5 text-[#005bb5]" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#1a1a1a]">Business Hours</h3>
-                      <p className="text-sm text-[#666] mt-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                      <h3 className="text-sm font-semibold text-primary">Business Hours</h3>
+                      <p className="text-sm text-secondary mt-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
                     </div>
                   </GlassCard>
                 </div>
@@ -88,39 +88,39 @@ export default function ContactPage() {
                         <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#005bb5] to-[#0072e3] flex items-center justify-center mx-auto mb-4">
                           <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                         </div>
-                        <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">Thank You!</h3>
-                        <p className="text-[#666]">We will get back to you shortly.</p>
+                        <h3 className="text-2xl font-bold text-primary mb-2">Thank You!</h3>
+                        <p className="text-secondary">We will get back to you shortly.</p>
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="grid sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="block text-sm font-medium text-[#666] mb-2">Full Name *</label>
+                            <label className="block text-sm font-medium text-secondary mb-2">Full Name *</label>
                             <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                              className="w-full px-4 py-3 rounded-xl bg-[#f8f8f8] border border-[rgba(204,0,0,0.12)] text-[#1a1a1a] placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="Your name" />
+                              className="w-full px-4 py-3 rounded-xl bg-surface border border-[rgba(204,0,0,0.12)] text-primary placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="Your name" />
                           </div>
                           <div>
-                            <label className="block text-sm font-medium text-[#666] mb-2">Email *</label>
+                            <label className="block text-sm font-medium text-secondary mb-2">Email *</label>
                             <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                              className="w-full px-4 py-3 rounded-xl bg-[#f8f8f8] border border-[rgba(204,0,0,0.12)] text-[#1a1a1a] placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="your@email.com" />
+                              className="w-full px-4 py-3 rounded-xl bg-surface border border-[rgba(204,0,0,0.12)] text-primary placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="your@email.com" />
                           </div>
                         </div>
                         <div className="grid sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="block text-sm font-medium text-[#666] mb-2">Phone</label>
+                            <label className="block text-sm font-medium text-secondary mb-2">Phone</label>
                             <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                              className="w-full px-4 py-3 rounded-xl bg-[#f8f8f8] border border-[rgba(204,0,0,0.12)] text-[#1a1a1a] placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="+91 98765 43210" />
+                              className="w-full px-4 py-3 rounded-xl bg-surface border border-[rgba(204,0,0,0.12)] text-primary placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="+91 98765 43210" />
                           </div>
                           <div>
-                            <label className="block text-sm font-medium text-[#666] mb-2">Company</label>
+                            <label className="block text-sm font-medium text-secondary mb-2">Company</label>
                             <input type="text" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                              className="w-full px-4 py-3 rounded-xl bg-[#f8f8f8] border border-[rgba(204,0,0,0.12)] text-[#1a1a1a] placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="Company name" />
+                              className="w-full px-4 py-3 rounded-xl bg-surface border border-[rgba(204,0,0,0.12)] text-primary placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all" placeholder="Company name" />
                           </div>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-[#666] mb-2">Message *</label>
+                          <label className="block text-sm font-medium text-secondary mb-2">Message *</label>
                           <textarea rows={5} required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                            className="w-full px-4 py-3 rounded-xl bg-[#f8f8f8] border border-[rgba(204,0,0,0.12)] text-[#1a1a1a] placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all resize-none" placeholder="Tell us about your project..." />
+                            className="w-full px-4 py-3 rounded-xl bg-surface border border-[rgba(204,0,0,0.12)] text-primary placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all resize-none" placeholder="Tell us about your project..." />
                         </div>
                         <div className="pt-2">
                           <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
@@ -142,7 +142,7 @@ export default function ContactPage() {
             <GlassCard className="w-full aspect-[21/9] flex items-center justify-center">
               <div className="text-center">
                 <HiLocationMarker className="w-10 h-10 text-[#005bb5] mx-auto mb-3" />
-                <p className="text-[#666]">Alltronix Head Office</p>
+                <p className="text-secondary">Alltronix Head Office</p>
                 <p className="text-sm text-[#64748b] mt-1">{companyInfo.contact.address}</p>
               </div>
             </GlassCard>

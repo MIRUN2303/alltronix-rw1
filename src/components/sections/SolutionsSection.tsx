@@ -71,13 +71,13 @@ export default function SolutionsSection() {
           className="text-center mb-14"
         >
           <div className="flex items-center justify-center gap-3 mb-3">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#555]">OUR SOLUTIONS</span>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-secondary">OUR SOLUTIONS</span>
             <div className="w-10 h-0.5 bg-[#005bb5]" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary">
             Focused Industries
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#666] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-secondary max-w-2xl mx-auto leading-relaxed">
             With over three decades of experience, Alltronix delivers engineering excellence across six core industrial sectors.
           </p>
         </motion.div>

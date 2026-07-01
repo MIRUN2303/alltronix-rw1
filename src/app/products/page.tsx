@@ -39,8 +39,8 @@ export default function ProductsPage() {
                   <Link href={`/products/${cat.slug}`}>
                     <GlassCard className="p-6 h-full group" hover>
                       <div className="text-3xl mb-4">{categoryIcons[cat.id]}</div>
-                      <h3 className="text-lg font-semibold text-[#1a1a1a] mb-2 group-hover:text-[#005bb5] transition-colors">{cat.name}</h3>
-                      <p className="text-sm text-[#666] leading-relaxed mb-4">{cat.description}</p>
+                      <h3 className="text-lg font-semibold text-primary mb-2 group-hover:text-[#005bb5] transition-colors">{cat.name}</h3>
+                      <p className="text-sm text-secondary leading-relaxed mb-4">{cat.description}</p>
                       <p className="text-xs text-[#005bb5] font-medium">{cat.subcategories.length} product categories</p>
                       <span className="inline-flex items-center gap-1 text-xs text-[#005bb5] group-hover:gap-2 transition-all mt-3">
                         Explore <HiArrowRight className="w-3 h-3" />
@@ -63,15 +63,15 @@ export default function ProductsPage() {
                 <table className="w-full text-left">
                   <thead>
                     <tr className="border-b border-[rgba(204,0,0,0.08)]">
-                      <th className="px-6 py-4 text-xs font-semibold text-[#666] uppercase tracking-wider">Category</th>
-                      <th className="px-6 py-4 text-xs font-semibold text-[#666] uppercase tracking-wider">Product</th>
+                      <th className="px-6 py-4 text-xs font-semibold text-secondary uppercase tracking-wider">Category</th>
+                      <th className="px-6 py-4 text-xs font-semibold text-secondary uppercase tracking-wider">Product</th>
                     </tr>
                   </thead>
                   <tbody>
                     {featuredProducts.map((fp, i) => (
                       <tr key={i} className="border-b border-[rgba(204,0,0,0.04)] hover:bg-white/[0.02] transition-colors">
-                        <td className="px-6 py-3 text-sm text-[#666]">{fp.category}</td>
-                        <td className="px-6 py-3 text-sm text-[#1a1a1a] font-medium">{fp.product}</td>
+                        <td className="px-6 py-3 text-sm text-secondary">{fp.category}</td>
+                        <td className="px-6 py-3 text-sm text-primary font-medium">{fp.product}</td>
                       </tr>
                     ))}
                   </tbody>

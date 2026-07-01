@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 import './globals.css'
 
 const inter = Inter({
@@ -112,16 +113,26 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            try {
+              var t = localStorage.getItem('theme');
+              if (t === 'dark') document.documentElement.classList.add('dark');
+            } catch(e) {}
+          `
+        }} />
       </head>
       <body className="antialiased">
-        <div className="noise-overlay" aria-hidden="true" />
-        {children}
+        <ThemeProvider>
+          <div className="noise-overlay" aria-hidden="true" />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
