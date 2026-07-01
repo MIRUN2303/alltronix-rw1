@@ -93,21 +93,23 @@ export default function Header() {
                           View All Products →
                         </Link>
                         {productCategories.map((cat) => (
-                          <Link
-                            key={cat.id}
-                            href={`/products/${cat.slug}`}
-                            className="block p-3 rounded-xl hover:bg-gray-50 transition-all group"
-                          >
-                            <span className="text-sm font-semibold text-[#1a1a1a] group-hover:text-[#005bb5] transition-colors">{cat.name}</span>
+                          <div key={cat.id} className="block p-3 rounded-xl hover:bg-gray-50 transition-all group">
+                            <Link href={`/products/${cat.slug}`} className="text-sm font-semibold text-[#1a1a1a] hover:text-[#005bb5] transition-colors">{cat.name}</Link>
                             <div className="mt-1.5 space-y-0.5">
                               {cat.subcategories.slice(0, 4).map((sub) => (
-                                <span key={sub.name} className="block text-xs text-[#888] truncate">{sub.name}</span>
+                                <Link
+                                  key={sub.name}
+                                  href={`/products/${cat.slug}#${sub.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                  className="block text-xs text-[#888] hover:text-[#005bb5] truncate transition-colors"
+                                >
+                                  {sub.name}
+                                </Link>
                               ))}
                               {cat.subcategories.length > 4 && (
-                                <span className="text-xs text-[#005bb5]">+{cat.subcategories.length - 4} more</span>
+                                <Link href={`/products/${cat.slug}`} className="block text-xs text-[#005bb5] hover:text-[#004999] transition-colors mt-1">+{cat.subcategories.length - 4} more</Link>
                               )}
                             </div>
-                          </Link>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -209,7 +211,14 @@ export default function Header() {
                               </Link>
                               <div className="ml-4 space-y-0.5">
                                 {cat.subcategories.slice(0, 3).map((sub) => (
-                                  <span key={sub.name} className="block px-4 py-1 text-xs text-[#888]">{sub.name}</span>
+                                  <Link
+                                    key={sub.name}
+                                    href={`/products/${cat.slug}#${sub.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                    onClick={() => setIsOpen(false)}
+                                    className="block px-4 py-1 text-xs text-[#888] hover:text-[#005bb5] transition-colors"
+                                  >
+                                    {sub.name}
+                                  </Link>
                                 ))}
                               </div>
                             </div>
