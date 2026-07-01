@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -122,54 +121,31 @@ const solutionIcons: Record<string, React.ReactNode> = {
 }
 
 function ImageContainer({ src, alt }: { src: string; alt: string }) {
-  const [rotateX, setRotateX] = useState(0)
-  const [rotateY, setRotateY] = useState(0)
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 })
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const centerX = rect.width / 2
-    const centerY = rect.height / 2
-    setRotateX((y - centerY) / 25)
-    setRotateY((x - centerX) / 25)
-    setGlowPos({ x: (x / rect.width) * 100, y: (y / rect.height) * 100 })
-  }
-
-  const handleMouseLeave = () => {
-    setRotateX(0)
-    setRotateY(0)
-    setGlowPos({ x: 50, y: 50 })
-  }
-
   return (
-    <div
-      className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-[#cc0000]/10 to-[#e60000]/5 border border-[rgba(204,0,0,0.08)] cursor-pointer group"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-        transition: 'transform 0.1s ease-out',
-      }}
-    >
+    <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-[#cc0000]/10 to-[#e60000]/5 border border-[rgba(204,0,0,0.08)] group">
       <img
         src={src}
         alt={alt}
-        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
         loading="lazy"
         onError={(e) => {
           const el = e.target as HTMLImageElement
           el.style.display = 'none'
         }}
       />
-      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500" />
-      <div
-        className="absolute -inset-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-        style={{
-          background: `radial-gradient(600px circle at ${glowPos.x}% ${glowPos.y}%, rgba(204,0,0,0.08), transparent 40%)`,
-        }}
-      />
+      <div className="absolute inset-0 bg-black/10 transition-all duration-500 group-hover:bg-black/30" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
+            View Details
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/0 group-hover:ring-[#cc0000]/40 transition-all duration-500 pointer-events-none" />
     </div>
   )
 }
