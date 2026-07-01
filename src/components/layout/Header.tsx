@@ -139,7 +139,7 @@ export default function Header() {
             className="hidden lg:flex items-center gap-2 text-sm font-medium text-secondary hover:text-[#cc0000] transition-colors"
           >
             <HiPhone className="w-4 h-4 text-[#cc0000]" />
-            <span className="hidden xl:inline">(+91) {companyInfo.contact.phone}</span>
+            <span className="hidden xl:inline">{companyInfo.contact.phone}</span>
           </a>
 
           <a
