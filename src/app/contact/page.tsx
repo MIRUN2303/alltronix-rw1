@@ -136,15 +136,21 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Map Placeholder */}
+        {/* Map */}
         <section className="relative py-16">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <GlassCard className="w-full aspect-[21/9] flex items-center justify-center">
-              <div className="text-center">
-                <HiLocationMarker className="w-10 h-10 text-[#cc0000] mx-auto mb-3" />
-                <p className="text-secondary">Alltronix Head Office</p>
-                <p className="text-sm text-[#64748b] mt-1">{companyInfo.contact.address}</p>
-              </div>
+            <GlassCard className="w-full overflow-hidden p-0">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5552440914523!2d72.8699134!3d19.1131679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9a1b1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Alltronix Location"
+                className="w-full"
+              />
             </GlassCard>
           </div>
         </section>

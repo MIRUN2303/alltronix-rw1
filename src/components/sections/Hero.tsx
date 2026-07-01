@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const bannerSlides = [
   {
@@ -12,49 +13,49 @@ const bannerSlides = [
       {
         label: 'INDUSTRIAL AUTOMATION',
         bg: '/images/hero/industrial-automation.jpg',
-        fallbackGradient: 'from-blue-950 to-blue-800',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '⚙️',
         svg: '',
       },
       {
         label: 'RAILWAYS',
         bg: '/images/hero/railways.jpg',
-        fallbackGradient: 'from-red-950 to-red-800',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '🚄',
         svg: '',
       },
       {
         label: 'DEFENCE',
         bg: '/images/hero/defence.jpg',
-        fallbackGradient: 'from-blue-900 to-slate-800',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '🛡️',
         svg: '',
       },
       {
         label: 'INDUSTRIAL IOT',
         bg: '/images/hero/industrial-iot.jpg',
-        fallbackGradient: 'from-blue-950 to-red-800',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '🌐',
         svg: '',
       },
       {
         label: 'RENEWABLE',
         bg: '/images/hero/renewable.jpg',
-        fallbackGradient: 'from-red-950 to-red-900',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '☀️',
         svg: '',
       },
       {
         label: 'SMART CITY',
         bg: '/images/hero/smart-city.jpg',
-        fallbackGradient: 'from-red-950 to-red-800',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '🏙️',
         svg: '',
       },
       {
         label: 'ELECTRO MOBILITY',
         bg: '/images/hero/e-mobility.jpg',
-        fallbackGradient: 'from-teal-700 to-green-600',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '🔌',
         svg: '',
       },
@@ -66,22 +67,22 @@ const bannerSlides = [
     panels: [
       {
         label: 'ENGINEERING EXCELLENCE',
-        bg: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
-        fallbackGradient: 'from-blue-900 to-indigo-800',
+        bg: '/images/hero/industrial-automation.jpg',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '',
         svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/><path d="M6 10v4M10 12H6M18 10v4M22 12h-4"/><circle cx="6" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="12" r="1" fill="currentColor"/><path d="M10 6h4"/><path d="M12 2v4M12 18v4"/></svg>',
       },
       {
         label: 'ISO-9001:2015 CERTIFIED',
-        bg: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
-        fallbackGradient: 'from-slate-800 to-blue-900',
+        bg: '/images/hero/railways.jpg',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '',
         svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>',
       },
       {
         label: 'GLOBAL PARTNERS NETWORK',
-        bg: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
-        fallbackGradient: 'from-teal-800 to-green-700',
+        bg: '/images/hero/industrial-automation.jpg',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '',
         svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V5M12 19v-4M15 12h4M5 12h4"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="7" y1="7" x2="9.5" y2="9.5"/><line x1="17" y1="7" x2="14.5" y2="9.5"/><line x1="7" y1="17" x2="9.5" y2="14.5"/><line x1="17" y1="17" x2="14.5" y2="14.5"/></svg>',
       },
@@ -94,21 +95,21 @@ const bannerSlides = [
       {
         label: 'POWER & SUBSTATION',
         bg: '/images/hero/power-substation.jpg',
-        fallbackGradient: 'from-blue-900 to-indigo-800',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '',
         svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H10a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V3a1 1 0 00-1-1z"/><path d="M12 8v3M12 15v3"/><path d="M8 16H5a2 2 0 01-2-2v-3a2 2 0 012-2h4"/><path d="M16 16h3a2 2 0 002-2v-3a2 2 0 00-2-2h-4"/><path d="M9 19h6"/><path d="M7 22h10"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>',
       },
       {
         label: 'E-MOBILITY',
         bg: '/images/hero/e-mobility.jpg',
-        fallbackGradient: 'from-teal-700 to-green-600',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '',
         svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><path d="M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12"/><path d="M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/><path d="M12 12l3-3M12 12l-2 4" opacity="0.5"/></svg>',
       },
       {
         label: 'FACTORY AUTOMATION',
         bg: '/images/hero/factory-automation.jpg',
-        fallbackGradient: 'from-slate-700 to-blue-800',
+        fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
         emoji: '',
         svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="10" width="4" height="11" rx="0.5"/><rect x="10" y="6" width="4" height="15" rx="0.5"/><rect x="17" y="12" width="4" height="9" rx="0.5"/><path d="M5 10V7l7-4 7 4v3"/><line x1="3" y1="21" x2="21" y2="21"/><circle cx="12" cy="4" r="0.8" fill="currentColor"/></svg>',
       },
@@ -277,6 +278,7 @@ const panelDescriptions = [
   'Connected Systems & M2M Communication',
   'Solar, Wind & Clean Energy Infrastructure',
   'Intelligent Urban Infrastructure',
+  'EV Charging & Transport Electrification',
 ]
 
 const industryIllustrations = [
@@ -331,6 +333,9 @@ const industryIllustrations = [
     <path d="M5 10V7l7-4 7 4v3" />
     <line x1="3" y1="21" x2="21" y2="21" />
     <circle cx="12" cy="4" r="0.8" fill="currentColor" />
+  </svg>,
+  <svg key="emobility" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
   </svg>,
 ]
 

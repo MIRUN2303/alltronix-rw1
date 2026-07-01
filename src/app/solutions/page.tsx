@@ -45,8 +45,17 @@ export default function SolutionsPage() {
                       </GlassCard>
                     </ScrollReveal>
                     <ScrollReveal direction={index % 2 === 0 ? 'right' : 'left'}>
-                      <div className="aspect-video rounded-2xl bg-gradient-to-br from-[#cc0000]/10 to-[#e60000]/5 border border-[rgba(204,0,0,0.08)] flex items-center justify-center">
-                        <span className="text-secondary">Solution visualization</span>
+                      <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-[#cc0000]/10 to-[#e60000]/5 border border-[rgba(204,0,0,0.08)]">
+                        <img
+                          src={`/images/solutions/${sol.slug}.jpg`}
+                          alt={sol.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => {
+                            const el = e.target as HTMLImageElement
+                            el.style.display = 'none'
+                          }}
+                        />
                       </div>
                     </ScrollReveal>
                   </div>

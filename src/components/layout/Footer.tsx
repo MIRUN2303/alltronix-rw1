@@ -30,19 +30,19 @@ export default function Footer() {
                 style={{ height: '40px', width: 'auto' }}
               />
             </Link>
-            <p className="text-sm text-muted leading-relaxed mb-6 max-w-md">
+            <p className="text-sm text-gray-400 leading-relaxed mb-6 max-w-md">
               {companyInfo.description}
             </p>
             <div className="space-y-3">
-              <div className="flex items-start gap-3 text-sm text-muted">
+              <div className="flex items-start gap-3 text-sm text-gray-400">
                 <HiLocationMarker className="w-5 h-5 text-[#cc0000] shrink-0 mt-0.5" />
                 <span>{companyInfo.contact.address}</span>
               </div>
-              <a href={`tel:${companyInfo.contact.phone}`} className="flex items-center gap-3 text-sm text-muted hover:text-white transition-colors">
+              <a href={`tel:${companyInfo.contact.phone}`} className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors">
                 <HiPhone className="w-5 h-5 text-[#cc0000]" />
                 <span>{companyInfo.contact.phone}</span>
               </a>
-              <a href={`mailto:${companyInfo.contact.email}`} className="flex items-center gap-3 text-sm text-muted hover:text-white transition-colors">
+              <a href={`mailto:${companyInfo.contact.email}`} className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors">
                 <HiMail className="w-5 h-5 text-[#cc0000]" />
                 <span>{companyInfo.contact.email}</span>
               </a>
@@ -57,7 +57,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted hover:text-[#cc0000] transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#cc0000] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
                 <li key={cat.id}>
                   <Link
                     href={`/products/${cat.slug}`}
-                    className="text-sm text-muted hover:text-[#cc0000] transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#cc0000] transition-colors"
                   >
                     {cat.name}
                   </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
                 <li key={sol.slug}>
                   <Link
                     href={`/solutions#${sol.slug}`}
-                    className="text-sm text-muted hover:text-[#cc0000] transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#cc0000] transition-colors"
                   >
                     {sol.title}
                   </Link>
@@ -100,13 +100,13 @@ export default function Footer() {
             </ul>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Follow Us</h3>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-muted hover:bg-[#cc0000] hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-gray-400 hover:bg-[#cc0000] hover:text-white transition-all">
                 <FaLinkedinIn className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-muted hover:bg-[#cc0000] hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-gray-400 hover:bg-[#cc0000] hover:text-white transition-all">
                 <FaFacebookF className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-muted hover:bg-[#cc0000] hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-gray-400 hover:bg-[#cc0000] hover:text-white transition-all">
                 <FaTwitter className="w-4 h-4" />
               </a>
             </div>
@@ -115,18 +115,18 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-[#333] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-secondary">{companyInfo.copyright}</p>
+          <p className="text-sm text-gray-500">{companyInfo.copyright}</p>
           <div className="flex items-center gap-4">
             <button
               onClick={toggle}
-              className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-secondary hover:bg-[#cc0000] hover:text-white transition-all"
+              className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-gray-500 hover:bg-[#cc0000] hover:text-white transition-all"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <HiSun className="w-4 h-4" /> : <HiMoon className="w-4 h-4" />}
             </button>
             <div className="flex gap-6">
-              <Link href="/privacy-policy" className="text-sm text-secondary hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="text-sm text-secondary hover:text-white transition-colors">Terms of Use</Link>
+              <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Use</Link>
             </div>
           </div>
         </div>
