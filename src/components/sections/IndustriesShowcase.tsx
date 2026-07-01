@@ -229,11 +229,22 @@ export default function IndustriesShowcase() {
                 transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
                 className="absolute inset-0 rounded-3xl overflow-hidden"
               >
-                {/* Gradient background */}
+                {/* Background image */}
+                <img
+                  src={`/images/industries/${industries[active].slug}.jpg`}
+                  alt={industries[active].name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => {
+                    const el = e.target as HTMLImageElement
+                    el.style.display = 'none'
+                  }}
+                />
+
+                {/* Gradient overlay */}
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: `linear-gradient(135deg, ${industryColors[active].from}15, ${industryColors[active].to}08)`,
+                    background: `linear-gradient(135deg, ${industryColors[active].from}CC, ${industryColors[active].to}99)`,
                   }}
                 />
 

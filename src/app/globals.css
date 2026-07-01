@@ -101,6 +101,7 @@ body {
 
 .glass-grain {
   position: relative;
+  isolation: isolate;
   background: linear-gradient(135deg, rgba(255,255,255,0.97) 0%, rgba(250,250,250,0.95) 100%);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
@@ -117,13 +118,7 @@ body {
   background-size: 96px 96px;
   opacity: 0.035;
   pointer-events: none;
-  mix-blend-mode: overlay;
-  z-index: 0;
-}
-
-.glass-grain > * {
-  position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 
 .dark .glass-grain {

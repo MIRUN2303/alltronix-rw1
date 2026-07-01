@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4">
       <motion.nav
-        className="w-full max-w-[1320px] flex items-center justify-between px-4 sm:px-5 rounded-full border border-white/10 bg-white/55 backdrop-blur-2xl shadow-lg shadow-black/5 ring-1 ring-white/30"
+        className="w-full max-w-[1320px] flex items-center justify-between px-4 sm:px-5 rounded-full bg-white/80 backdrop-blur-2xl shadow-lg shadow-black/5 ring-1 ring-white/20"
         animate={{
           height: isScrolled ? 56 : 64,
           boxShadow: isScrolled
@@ -66,18 +66,18 @@ export default function Header() {
               onMouseEnter={() => item.children && setActiveDropdown(item.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <Link
+                <Link
                 href={item.href}
-                className={`px-3 py-1.5 text-sm font-semibold uppercase tracking-wide transition-all duration-200 rounded-lg flex items-center gap-1 ${
+                className={`px-2 py-1 text-xs font-bold uppercase tracking-normal transition-all duration-200 rounded-lg flex items-center gap-1 ${
                   isActive(item.href)
-                    ? 'text-[#005bb5] bg-[#005bb5]/8'
-                    : 'text-secondary hover:text-[#005bb5] hover:bg-[#005bb5]/5'
+                    ? 'text-[#cc0000] bg-[#cc0000]/8'
+                    : 'text-secondary hover:text-[#cc0000] hover:bg-[#cc0000]/5'
                 }`}
               >
                 {item.label}
                 {item.children && (
                   <HiChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    className={`w-3 h-3 transition-transform duration-200 ${
                       activeDropdown === item.label ? 'rotate-180' : ''
                     }`}
                   />
@@ -87,7 +87,7 @@ export default function Header() {
               {item.children && activeDropdown === item.label && (
                 <>
                   {item.label === 'Products' ? (
-                    <div className="absolute top-full left-0 mt-2 w-[700px] glass-grain rounded-2xl p-4">
+                    <div className="absolute top-full left-0 mt-2 w-[580px] glass-grain rounded-2xl p-3">
                       <div className="grid grid-cols-2 gap-3">
                         <Link href="/products" className="col-span-2 px-3 py-2 text-sm font-semibold text-[#cc0000] hover:text-[#990000] rounded-lg hover:bg-[#cc0000]/8 transition-colors">
                           View All Products →
