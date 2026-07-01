@@ -7,12 +7,67 @@ import SectionHeader from '@/components/ui/SectionHeader'
 import GlassCard from '@/components/ui/GlassCard'
 import { productCategories, featuredProducts } from '@/data/products'
 
-const categoryIcons: Record<string, string> = {
-  automate: '⚡',
-  connect: '🔗',
-  'mark-assemble-and-install': '🔧',
-  'supply-charge-and-protect': '🔋',
-  'switch-measure-and-monitor': '📊',
+const categoryIcons: Record<string, React.ReactNode> = {
+  automate: (
+    <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="6" y="6" width="14" height="14" rx="2" />
+      <rect x="28" y="6" width="14" height="14" rx="2" />
+      <rect x="6" y="28" width="14" height="14" rx="2" />
+      <rect x="28" y="28" width="14" height="14" rx="2" />
+      <path d="M13 20v8M20 24h-8M35 20v8M42 24h-8" />
+      <circle cx="13" cy="24" r="2" fill="currentColor" />
+      <circle cx="35" cy="24" r="2" fill="currentColor" />
+      <path d="M24 13h-2M24 35h-2" />
+      <path d="M20 13h8" />
+      <path d="M20 35h8" />
+      <path d="M24 6v4M24 38v4" />
+    </svg>
+  ),
+  connect: (
+    <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="14" cy="12" r="6" />
+      <circle cx="34" cy="12" r="6" />
+      <circle cx="14" cy="36" r="6" />
+      <circle cx="34" cy="36" r="6" />
+      <line x1="20" y1="14" x2="28" y2="14" />
+      <line x1="14" y1="18" x2="14" y2="30" />
+      <line x1="34" y1="18" x2="34" y2="30" />
+      <line x1="20" y1="34" x2="28" y2="34" />
+      <line x1="14" y1="12" x2="8" y2="12" />
+      <line x1="40" y1="12" x2="34" y2="12" />
+      <circle cx="6" cy="12" r="1.5" fill="currentColor" />
+      <circle cx="42" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  ),
+  'mark-assemble-and-install': (
+    <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M24 4L8 14v20l16 10 16-10V14L24 4z" />
+      <path d="M8 14l16 10 16-10" />
+      <path d="M24 24v20" />
+      <line x1="14" y1="18" x2="14" y2="26" opacity="0.5" />
+      <line x1="34" y1="18" x2="34" y2="26" opacity="0.5" />
+      <circle cx="24" cy="14" r="2" fill="currentColor" />
+    </svg>
+  ),
+  'supply-charge-and-protect': (
+    <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="14" y="6" width="20" height="36" rx="3" />
+      <line x1="22" y1="14" x2="26" y2="14" />
+      <line x1="20" y1="18" x2="28" y2="18" />
+      <path d="M22 24l4 4 6-6" />
+      <rect x="18" y="30" width="12" height="6" rx="1" opacity="0.4" />
+    </svg>
+  ),
+  'switch-measure-and-monitor': (
+    <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="6" y="8" width="36" height="32" rx="3" />
+      <rect x="10" y="14" width="8" height="6" rx="1" />
+      <rect x="22" y="14" width="8" height="6" rx="1" />
+      <rect x="34" y="14" width="6" height="6" rx="1" />
+      <path d="M10 28l6 6 8-10 8 6 6-8" strokeWidth="2" />
+      <circle cx="36" cy="16" r="1" fill="currentColor" />
+    </svg>
+  ),
 }
 
 const categoryImages: Record<string, string> = {
@@ -55,7 +110,7 @@ export default function ProductsSection() {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 text-2xl">{categoryIcons[cat.id]}</div>
+                    <div className="absolute bottom-3 left-4 text-[#cc0000]">{categoryIcons[cat.id]}</div>
                   </div>
                   <div className="p-5">
                     <h3 className="text-base font-semibold text-primary mb-1.5 group-hover:text-[#cc0000] transition-colors">{cat.name}</h3>
