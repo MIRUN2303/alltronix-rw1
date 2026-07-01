@@ -110,7 +110,7 @@ export default function Hero() {
   const slide = bannerSlides[current]
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#001a33] flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ minHeight: 'max(100svh, 540px)' }}>
+    <section className="relative w-full overflow-hidden bg-[#001a33] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20" style={{ minHeight: 'max(100svh, 540px)' }}>
       <div className="relative w-full max-w-[1600px] rounded-2xl lg:rounded-3xl overflow-hidden" style={{ height: 'calc(100svh - 40px)', minHeight: 500, maxHeight: 900 }}>
       <AnimatePresence mode="wait" custom={direction}>
         {slide.type === 'grid' && (
