@@ -48,13 +48,28 @@ const bannerSlides = [
     ],
   },
   {
-    id: 'tech',
-    type: 'full',
-    bg: 'https://www.alltronix.com/wp-content/uploads/2020/08/banner-bg.jpg',
-    headline: 'Engineering Industrial Excellence',
-    subline: 'Since 1978',
-    description: 'From the control cabinet to the field level — providing world-class solutions in Industrial Automation, Railways, Electromobility, and Renewable Energy.',
-    badge: 'ISO-9001:2015 Certified',
+    id: 'highlights',
+    type: 'split',
+    panels: [
+      {
+        label: 'ENGINEERING EXCELLENCE',
+        bg: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
+        fallbackGradient: 'from-blue-900 to-indigo-800',
+        emoji: '🏗️',
+      },
+      {
+        label: 'ISO-9001:2015 CERTIFIED',
+        bg: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
+        fallbackGradient: 'from-slate-800 to-blue-900',
+        emoji: '✅',
+      },
+      {
+        label: 'GLOBAL PARTNERS NETWORK',
+        bg: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
+        fallbackGradient: 'from-teal-800 to-green-700',
+        emoji: '🌍',
+      },
+    ],
   },
   {
     id: 'emobility',
@@ -104,7 +119,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (current === 0) return
-    const timer = setInterval(next, 7000)
+    const timer = setInterval(next, 4500)
     return () => clearInterval(timer)
   }, [current, next])
 
@@ -129,124 +144,7 @@ export default function Hero() {
           </motion.div>
         )}
 
-        {slide.type === 'full' && (
-          <motion.div
-            key={slide.id}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url('${slide.bg}')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#001a33]/85 via-[#002244]/60 to-[#002244]/30" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#001a33]/60" />
 
-            {/* Animated particles overlay */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(20)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute rounded-full bg-blue-400/20"
-                  style={{
-                    width: Math.random() * 4 + 2,
-                    height: Math.random() * 4 + 2,
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animation: `float ${Math.random() * 4 + 3}s ease-in-out infinite`,
-                    animationDelay: `${Math.random() * 3}s`,
-                  }}
-                />
-              ))}
-            </div>
-
-            {/* Content */}
-            <div className="relative h-full flex items-center">
-              <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="max-w-3xl">
-                  <motion.span
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-[#cc0000]/15 text-[#ff6666] border border-[#cc0000]/30 mb-6"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#cc0000] animate-pulse" />
-                    {slide.badge}
-                  </motion.span>
-
-                  <motion.h1
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[0.95] tracking-tight max-w-4xl"
-                  >
-                    {slide.headline}{' '}
-                    <span className="text-[#0080ff]">{slide.subline}</span>
-                  </motion.h1>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                    className="mt-4 text-sm sm:text-base lg:text-lg text-white/70 leading-relaxed max-w-xl"
-                  >
-                    {slide.description}
-                  </motion.p>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.35 }}
-                    className="mt-6 flex flex-wrap gap-3"
-                  >
-                    <Link
-                      href="/solutions"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#005bb5] text-white font-semibold rounded-lg hover:bg-[#004999] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#005bb5]/30 text-xs sm:text-sm"
-                    >
-                      Explore Solutions
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all hover:-translate-y-0.5 text-xs sm:text-sm backdrop-blur-sm"
-                    >
-                      Contact Us
-                    </Link>
-                  </motion.div>
-
-                  {/* Stats Row */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.5 }}
-                    className="mt-6 pt-5 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4"
-                  >
-                    {[
-                      { value: '48+', label: 'Years of Excellence' },
-                      { value: '31+', label: 'Global Partners' },
-                      { value: '1000+', label: 'Products Delivered' },
-                      { value: '15+', label: 'Industries Served' },
-                    ].map((stat) => (
-                      <div key={stat.label}>
-                        <div className="text-lg sm:text-xl lg:text-2xl font-black text-white">{stat.value}</div>
-                        <div className="text-[10px] sm:text-xs text-white/50 mt-0.5">{stat.label}</div>
-                      </div>
-                    ))}
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
 
         {slide.type === 'split' && (
           <motion.div
@@ -425,7 +323,7 @@ function Slide1Grid({ panels, onAdvance }: { panels: NonNullable<typeof bannerSl
         }
         return next
       })
-    }, 4500)
+    }, 3500)
     return () => clearInterval(timer)
   }, [hovered, panels.length, onAdvance])
 
@@ -511,58 +409,102 @@ function Slide1Grid({ panels, onAdvance }: { panels: NonNullable<typeof bannerSl
         />
       </div>
 
-      {/* ─── Right: 6 individual industry images aligned to rows ─── */}
-      <div className="hidden lg:flex relative flex-1 flex-col justify-center gap-[10px] px-3 overflow-hidden">
-        {panels.map((p, i) => {
-          const isOn = i === active
-          const accent = accentColors[i]
-          return (
+      {/* ─── Right: Large active industry image with content ─── */}
+      <div className="hidden lg:block relative flex-1 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+            className="absolute inset-0"
+          >
+            <img
+              src={panels[active].bg}
+              alt={panels[active].label}
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={(e) => {
+                const el = e.target as HTMLImageElement
+                el.style.display = 'none'
+              }}
+            />
+            <div className={`absolute inset-0 bg-gradient-to-br ${panels[active].fallbackGradient} opacity-40`} />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001a33]/80 via-[#001a33]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+            {/* Accent color edge glow from left */}
+            <div
+              className="absolute left-0 top-0 bottom-0 w-[3px]"
+              style={{
+                background: `linear-gradient(to bottom, transparent, ${accentColors[active].hex}, transparent)`,
+                boxShadow: `0 0 30px ${accentColors[active].hex}`,
+              }}
+            />
+
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col justify-center p-10 lg:p-14 xl:p-16">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                style={{ backgroundColor: `${accentColors[active].hex}30` }}
+              >
+                <span className="text-white">{industryIllustrations[active]}</span>
+              </motion.span>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-white font-black text-2xl lg:text-3xl xl:text-4xl tracking-tight leading-tight max-w-lg"
+              >
+                {panels[active].label}
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
+                className="mt-3 text-white/60 text-sm lg:text-base max-w-md leading-relaxed"
+              >
+                {panelDescriptions[active]}
+              </motion.p>
+              <motion.a
+                href="/solutions"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-lg text-xs font-semibold text-white transition-all w-fit"
+                style={{ backgroundColor: accentColors[active].hex }}
+                whileHover={{ gap: '12px', opacity: 0.9 }}
+              >
+                Explore Solutions
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </motion.a>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Bottom pagination */}
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+          {panels.map((_, i) => (
             <button
-              key={p.label}
+              key={i}
               onClick={() => setActive(i)}
-              className={`relative flex-1 rounded-xl overflow-hidden transition-all duration-500 group ${
-                isOn ? 'ring-2 shadow-lg scale-[1.02] z-10' : 'opacity-40 hover:opacity-70'
-              }`}
-              style={isOn ? { boxShadow: `0 0 24px ${accent.hex}40, inset 0 0 0 2px ${accent.hex}` } : {}}
+              className="relative group"
+              aria-label={`Go to ${panels[i].label}`}
             >
-              <img
-                src={p.bg}
-                alt={p.label}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                onError={(e) => {
-                  const el = e.target as HTMLImageElement
-                  el.style.display = 'none'
-                }}
+              <div
+                className={`rounded-full transition-all duration-500 ${
+                  i === active ? 'w-8 h-[6px]' : 'w-[6px] h-[6px] bg-white/20 group-hover:bg-white/40'
+                }`}
+                style={i === active ? { backgroundColor: accentColors[i].hex } : {}}
               />
-              <div className={`absolute inset-0 bg-gradient-to-br ${p.fallbackGradient} opacity-30`} />
-              <div className={`absolute inset-0 transition-all duration-500 ${
-                isOn ? 'bg-gradient-to-r from-black/60 via-black/20 to-transparent' : 'bg-black/50'
-              }`} />
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 text-right">
-                <p className={`text-white font-bold tracking-tight leading-tight transition-all duration-500 ${
-                  isOn ? 'text-base' : 'text-xs'
-                }`}>
-                  {p.label}
-                </p>
-                <p className={`text-white/60 leading-tight transition-all duration-500 ${
-                  isOn ? 'text-xs mt-0.5' : 'text-[10px] mt-0'
-                }`}>
-                  {panelDescriptions[i]}
-                </p>
-              </div>
-              {/* Accent glow on active */}
-              {isOn && (
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-1"
-                  style={{
-                    background: `linear-gradient(to bottom, ${accent.hex}, transparent)`,
-                    boxShadow: `0 0 16px ${accent.hex}`,
-                  }}
-                />
-              )}
             </button>
-          )
-        })}
+          ))}
+        </div>
       </div>
 
       {/* ─── Mobile: Compact list ─── */}

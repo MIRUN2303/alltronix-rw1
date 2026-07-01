@@ -25,8 +25,19 @@ export default function BrandsPage() {
               {brands.map((brand, index) => (
                 <ScrollReveal key={brand.name} delay={index * 0.03}>
                   <GlassCard className="p-6 h-full group" hover>
-                    <h3 className="text-lg font-semibold text-[#1a1a1a] group-hover:text-[#005bb5] transition-colors">{brand.name}</h3>
-                    <p className="text-sm text-[#666] mt-3 leading-relaxed">{brand.description}</p>
+                    <div className="h-16 flex items-center justify-center mb-4">
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-h-14 max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          const el = e.target as HTMLImageElement
+                          el.style.display = 'none'
+                        }}
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold text-[#1a1a1a] group-hover:text-[#005bb5] transition-colors text-center">{brand.name}</h3>
+                    <p className="text-sm text-[#666] mt-3 leading-relaxed text-center">{brand.description}</p>
                   </GlassCard>
                 </ScrollReveal>
               ))}

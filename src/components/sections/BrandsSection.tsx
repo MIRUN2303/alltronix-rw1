@@ -3,39 +3,9 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-// Real brand logos from the Alltronix website
-const brands = [
-  { name: 'ABB', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/ABB-1-1.png' },
-  { name: 'Acksys', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/ACKSYS.png' },
-  { name: 'Advantech', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/advantech.png' },
-  { name: 'Antonics', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/antonics.png' },
-  { name: 'Axiomtek', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/axiomtek.png' },
-  { name: 'Brady', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Brady.png' },
-  { name: 'Cooper Bussmann', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/cooper-bussmann.png' },
-  { name: 'DFI', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/DFI.png' },
-  { name: 'Eaton', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/EATON.png' },
-  { name: 'Ensto', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Ensto.png' },
-  { name: 'Flexicon', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Flexicon.png' },
-  { name: 'Fraba Posital', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Posital-Fraba.png' },
-  { name: 'Harting', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Harting.png' },
-  { name: 'Hellerman Tyton', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/HellermannTyton.png' },
-  { name: 'Helu Kabel', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Helukabel.png' },
-  { name: 'Lutze Transportation', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/lutze.png' },
-  { name: 'Mildef', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Mildef.png' },
-  { name: 'MTM Power', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/MTM-Power.png' },
-  { name: 'Omron', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Omron.png' },
-  { name: 'Pflitsch', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Pflitsch.png' },
-  { name: 'Phoenix Contact', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/PhoenixContact.png' },
-  { name: 'PMA', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/PMA.png' },
-  { name: 'RR Kabel', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/RR-Kabel.png' },
-  { name: 'Sab Brockskes', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/SAB-Brockskes.png' },
-  { name: 'Schaffner', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Schaffner.png' },
-  { name: 'Sintrones', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Sintrones.png' },
-  { name: 'Souriau - Sunbank', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Souriau-Sunbank.png' },
-  { name: 'Thomas & Betts', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Thomas-Betts.png' },
-  { name: 'Trinity Touch', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/TrinityTouch.png' },
-  { name: 'Wiska', logo: 'https://www.alltronix.com/wp-content/uploads/2019/02/Wiska.png' },
-]
+import { brandLogos } from '@/data/brands'
+
+const brands = brandLogos
 
 const doubled = [...brands, ...brands]
 
