@@ -8,7 +8,7 @@ const focusedIndustries = [
   {
     name: 'Electromobility',
     slug: 'electromobility',
-    image: 'https://www.alltronix.com/wp-content/uploads/2020/09/emobility.jpg',
+    image: '/images/industries/electromobility.jpg',
     fallbackGradient: 'from-teal-600 to-emerald-800',
     description: 'EV charging infrastructure and power solutions for the electric vehicle ecosystem.',
     accent: '#0d9488',
@@ -16,7 +16,7 @@ const focusedIndustries = [
   {
     name: 'Railway',
     slug: 'railway',
-    image: 'https://www.alltronix.com/wp-content/uploads/2020/09/railway.jpg',
+    image: '/images/industries/railway.jpg',
     fallbackGradient: 'from-gray-700 to-gray-900',
     description: 'Specialized products and solutions for railway signaling, communication, and control systems.',
     accent: '#64748b',
@@ -24,7 +24,7 @@ const focusedIndustries = [
   {
     name: 'Renewable',
     slug: 'renewable',
-    image: 'https://www.alltronix.com/wp-content/uploads/2020/09/renewable.jpg',
+    image: '/images/industries/renewable.jpg',
     fallbackGradient: 'from-yellow-600 to-green-700',
     description: 'Components and systems for solar, wind, and renewable energy applications.',
     accent: '#059669',
@@ -32,7 +32,7 @@ const focusedIndustries = [
   {
     name: 'Defence',
     slug: 'defence',
-    image: 'https://www.alltronix.com/wp-content/uploads/2020/09/defence.jpg',
+    image: '/images/industries/defence.jpg',
     fallbackGradient: 'from-green-900 to-gray-800',
     description: 'Rugged and reliable solutions for defence and aerospace applications.',
     accent: '#1e293b',
@@ -40,16 +40,16 @@ const focusedIndustries = [
   {
     name: 'Automation',
     slug: 'automation',
-    image: 'https://www.alltronix.com/wp-content/uploads/2020/09/Factory-Automation.jpg',
-    fallbackGradient: 'from-blue-800 to-slate-700',
+    image: '/images/industries/automation.jpg',
+    fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
     description: 'Complete automation solutions for manufacturing and process industries.',
     accent: '#cc0000',
   },
   {
     name: 'Industrial Networking',
     slug: 'industrial-networking',
-    image: 'https://www.alltronix.com/wp-content/uploads/2020/09/industrial-iot.jpg',
-    fallbackGradient: 'from-cyan-800 to-blue-900',
+    image: '/images/industries/industrial-networking.jpg',
+    fallbackGradient: 'from-[#cc0000]/80 to-[#990000]/60',
     description: 'Comprehensive industrial networking solutions for reliable data communication.',
     accent: '#0891b2',
   },
