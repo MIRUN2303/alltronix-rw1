@@ -27,9 +27,9 @@ export default function ContactPage() {
           <div className="absolute inset-0 circuit-pattern opacity-20" />
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-l from-[#cc0000]/10 to-transparent blur-[100px]" />
           <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-5 gap-12">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Contact Info */}
-              <div className="lg:col-span-2 space-y-8">
+              <div className="space-y-8">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                   <span className="text-xs font-semibold tracking-widest uppercase text-[#cc0000]">Contact Us</span>
                   <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-primary leading-tight">Get in Touch</h1>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Form */}
-              <div className="lg:col-span-3">
+              <div>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                   <GlassCard className="p-8 lg:p-10">
                     {submitted ? (
@@ -141,7 +141,7 @@ export default function ContactPage() {
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <GlassCard className="w-full overflow-hidden p-0">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5552440914523!2d72.8699134!3d19.1131679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9a1b1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.674627895459!2d77.5171946!3d13.0317038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d21e3aa10ad%3A0x4d106514625eb075!2sAlltronix!5e0!3m2!1sen!2sin!4v1"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
