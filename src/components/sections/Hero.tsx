@@ -110,8 +110,8 @@ export default function Hero() {
   const slide = bannerSlides[current]
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#001a33] flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ minHeight: 'max(100svh, 540px)' }}>
-      <div className="relative w-full max-w-[1600px] rounded-2xl lg:rounded-3xl overflow-hidden -mt-20" style={{ height: 'calc(100svh - 40px)', minHeight: 500, maxHeight: 900 }}>
+    <section className="relative w-full bg-white flex items-start justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pb-12">
+      <div className="relative w-full max-w-[1600px] rounded-2xl lg:rounded-3xl overflow-hidden bg-[#001a33]" style={{ height: 'max(calc(100dvh - 140px), 460px)', maxHeight: 820 }}>
       <AnimatePresence mode="wait" custom={direction}>
         {slide.type === 'grid' && (
           <motion.div
@@ -122,7 +122,7 @@ export default function Hero() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
-            className="absolute inset-x-0 bottom-0 top-20"
+            className="absolute inset-0"
           >
             <Slide1Grid panels={slide.panels!} />
           </motion.div>
@@ -137,7 +137,7 @@ export default function Hero() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
-            className="absolute inset-x-0 bottom-0 top-20"
+            className="absolute inset-0"
             style={{
               backgroundImage: `url('${slide.bg}')`,
               backgroundSize: 'cover',
@@ -256,7 +256,7 @@ export default function Hero() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
-            className="absolute inset-x-0 bottom-0 top-20 flex"
+            className="absolute inset-0 flex"
           >
             {slide.panels!.map((panel, i) => (
               <div
