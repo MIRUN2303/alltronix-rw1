@@ -42,7 +42,7 @@ export default function AboutPreview() {
                 { value: '1978', label: 'Established' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-[#f8f8f8] rounded-xl p-3 text-center border border-[#e5e5e5]">
-                  <div className="text-xl font-black text-[#cc0000]">{stat.value}</div>
+                  <div className="text-xl font-black text-[#005bb5]">{stat.value}</div>
                   <div className="text-[10px] text-[#888] mt-0.5 leading-tight">{stat.label}</div>
                 </div>
               ))}
@@ -58,12 +58,12 @@ export default function AboutPreview() {
           >
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#555]">ABOUT US</span>
-              <div className="w-10 h-0.5 bg-[#cc0000]" />
+              <div className="w-10 h-0.5 bg-[#005bb5]" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-tight">
               Welcome to{' '}
-              <span className="text-[#cc0000]">ALLTRONIX</span>
+              <span className="text-[#005bb5]">ALLTRONIX</span>
             </h2>
 
             <p className="mt-6 text-base sm:text-lg text-[#555] leading-relaxed">
@@ -72,7 +72,7 @@ export default function AboutPreview() {
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-[#f8f8f8] border border-[#e5e5e5]">
-                <div className="w-8 h-8 rounded-lg bg-[#cc0000] flex items-center justify-center mb-3">
+                <div className="w-8 h-8 rounded-lg bg-[#005bb5] flex items-center justify-center mb-3">
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -81,7 +81,7 @@ export default function AboutPreview() {
                 <p className="text-xs text-[#888] leading-relaxed">{companyInfo.mission}</p>
               </div>
               <div className="p-4 rounded-xl bg-[#f8f8f8] border border-[#e5e5e5]">
-                <div className="w-8 h-8 rounded-lg bg-[#cc0000] flex items-center justify-center mb-3">
+                <div className="w-8 h-8 rounded-lg bg-[#005bb5] flex items-center justify-center mb-3">
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -94,7 +94,7 @@ export default function AboutPreview() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 bg-[#cc0000] text-white font-semibold rounded-lg hover:bg-[#aa0000] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#cc0000]/30 text-sm"
+              className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 bg-[#005bb5] text-white font-semibold rounded-lg hover:bg-[#004999] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#005bb5]/30 text-sm"
             >
               READ MORE
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

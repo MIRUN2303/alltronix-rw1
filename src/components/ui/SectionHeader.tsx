@@ -25,7 +25,7 @@ export default function SectionHeader({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="inline-block text-xs font-semibold tracking-widest uppercase text-[#cc0000] mb-4"
+          className="inline-block text-xs font-semibold tracking-widest uppercase text-[#005bb5] mb-4"
         >
           {label}
         </motion.span>

@@ -12,37 +12,37 @@ const bannerSlides = [
       {
         label: 'INDUSTRIAL AUTOMATION',
         bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/Factory-Automation.jpg',
-        fallbackGradient: 'from-slate-800 to-blue-900',
+        fallbackGradient: 'from-blue-950 to-blue-800',
         emoji: '⚙️',
       },
       {
         label: 'RAILWAYS',
         bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/railway.jpg',
-        fallbackGradient: 'from-gray-800 to-gray-600',
+        fallbackGradient: 'from-[#001a33] to-[#003d7a]',
         emoji: '🚄',
       },
       {
         label: 'DEFENCE',
         bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/defence.jpg',
-        fallbackGradient: 'from-green-900 to-gray-800',
+        fallbackGradient: 'from-blue-900 to-slate-800',
         emoji: '🛡️',
       },
       {
         label: 'INDUSTRIAL IOT',
         bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/industrial-iot.jpg',
-        fallbackGradient: 'from-cyan-900 to-blue-900',
+        fallbackGradient: 'from-blue-950 to-[#005bb5]',
         emoji: '🌐',
       },
       {
         label: 'RENEWABLE',
         bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/renewable.jpg',
-        fallbackGradient: 'from-yellow-700 to-green-800',
+        fallbackGradient: 'from-[#002244] to-blue-900',
         emoji: '☀️',
       },
       {
         label: 'SMART CITY',
         bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/smart-city.jpg',
-        fallbackGradient: 'from-purple-900 to-blue-900',
+        fallbackGradient: 'from-[#001a33] to-blue-800',
         emoji: '🏙️',
       },
     ],
@@ -110,7 +110,7 @@ export default function Hero() {
   const slide = bannerSlides[current]
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#050505] flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ minHeight: '100svh', minHeight: 540 }}>
+    <section className="relative w-full overflow-hidden bg-[#001a33] flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ minHeight: 'max(100svh, 540px)' }}>
       <div className="relative w-full max-w-[1600px] rounded-2xl lg:rounded-3xl overflow-hidden" style={{ height: 'calc(100svh - 40px)', minHeight: 500, maxHeight: 900 }}>
       <AnimatePresence mode="wait" custom={direction}>
         {slide.type === 'grid' && (
@@ -145,8 +145,8 @@ export default function Hero() {
             }}
           >
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#020b1a]/85 via-[#020b1a]/60 to-[#020b1a]/30" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#020b1a]/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001a33]/85 via-[#002244]/60 to-[#002244]/30" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#001a33]/60" />
 
             {/* Animated particles overlay */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -187,7 +187,7 @@ export default function Hero() {
                     className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.92] tracking-tight"
                   >
                     {slide.headline}{' '}
-                    <span className="text-[#e53935]">{slide.subline}</span>
+                    <span className="text-[#0080ff]">{slide.subline}</span>
                   </motion.h1>
 
                   <motion.p
@@ -207,7 +207,7 @@ export default function Hero() {
                   >
                     <Link
                       href="/solutions"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#cc0000] text-white font-semibold rounded-lg hover:bg-[#aa0000] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#cc0000]/30 text-sm sm:text-base"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#005bb5] text-white font-semibold rounded-lg hover:bg-[#004999] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#005bb5]/30 text-sm sm:text-base"
                     >
                       Explore Solutions
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -298,9 +298,9 @@ export default function Hero() {
             onClick={() => goTo(i)}
             aria-label={`Go to slide ${i + 1}`}
             className={`relative rounded-full transition-all duration-500 ${
-              i === current
-                ? 'w-10 h-3 bg-[#cc0000]'
-                : 'w-3 h-3 bg-white/30 hover:bg-white/60'
+               i === current
+                  ? 'w-10 h-3 bg-[#005bb5]'
+                 : 'w-3 h-3 bg-white/30 hover:bg-white/60'
             }`}
           />
         ))}
@@ -332,12 +332,12 @@ export default function Hero() {
 
 /* ───── Slide 1: Premium rework — 6 rows left + image right ───── */
 const accentColors = [
-  { hex: '#cc0000', label: 'red' },
-  { hex: '#f59e0b', label: 'amber' },
-  { hex: '#10b981', label: 'emerald' },
-  { hex: '#06b6d4', label: 'cyan' },
-  { hex: '#22c55e', label: 'green' },
-  { hex: '#a855f7', label: 'purple' },
+  { hex: '#003d7a', label: 'navy' },
+  { hex: '#cc0000', label: 'brandred' },
+  { hex: '#005bb5', label: 'brandblue' },
+  { hex: '#0072e3', label: 'azure' },
+  { hex: '#1a8cff', label: 'skyblue' },
+  { hex: '#47a3ff', label: 'lightblue' },
 ]
 
 const panelDescriptions = [
@@ -453,8 +453,8 @@ function Slide1Grid({ panels }: { panels: NonNullable<typeof bannerSlides[0]['pa
               style={{ backgroundImage: `url('${panels[active].bg}')` }}
             />
             <div className={`absolute inset-0 bg-gradient-to-br ${panels[active].fallbackGradient} opacity-50`} />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001a33]/80 via-[#001a33]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#001a33]/70 via-transparent to-transparent" />
 
             {/* Accent color edge glow from left */}
             <div
@@ -530,7 +530,7 @@ function Slide1Grid({ panels }: { panels: NonNullable<typeof bannerSlides[0]['pa
       </div>
 
       {/* ─── Mobile: Compact list ─── */}
-      <div className="lg:hidden absolute inset-0 flex flex-col bg-[#0a0a0a]/95 backdrop-blur-sm">
+      <div className="lg:hidden absolute inset-0 flex flex-col bg-[#001a33]/95 backdrop-blur-sm">
         <div className="flex-1 overflow-y-auto px-4 py-6 space-y-0.5">
           {panels.map((p, i) => {
             const isOn = i === active

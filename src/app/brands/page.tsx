@@ -25,7 +25,7 @@ export default function BrandsPage() {
               {brands.map((brand, index) => (
                 <ScrollReveal key={brand.name} delay={index * 0.03}>
                   <GlassCard className="p-6 h-full group" hover>
-                    <h3 className="text-lg font-semibold text-[#1a1a1a] group-hover:text-[#cc0000] transition-colors">{brand.name}</h3>
+                    <h3 className="text-lg font-semibold text-[#1a1a1a] group-hover:text-[#005bb5] transition-colors">{brand.name}</h3>
                     <p className="text-sm text-[#666] mt-3 leading-relaxed">{brand.description}</p>
                   </GlassCard>
                 </ScrollReveal>

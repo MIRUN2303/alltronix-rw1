@@ -25,7 +25,7 @@ export default function SolutionsPage() {
       <main className="relative pt-24">
         <section className="relative py-24 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 circuit-pattern opacity-20" />
-          <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#cc0000]/10 to-transparent blur-[100px]" />
+          <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#005bb5]/10 to-transparent blur-[100px]" />
           <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               label="Our Solutions"
@@ -45,7 +45,7 @@ export default function SolutionsPage() {
                       </GlassCard>
                     </ScrollReveal>
                     <ScrollReveal direction={index % 2 === 0 ? 'right' : 'left'}>
-                      <div className="aspect-video rounded-2xl bg-gradient-to-br from-[#cc0000]/10 to-[#ef4444]/5 border border-[rgba(204,0,0,0.08)] flex items-center justify-center">
+                      <div className="aspect-video rounded-2xl bg-gradient-to-br from-[#005bb5]/10 to-[#0072e3]/5 border border-[rgba(204,0,0,0.08)] flex items-center justify-center">
                         <span className="text-[#666]">Solution visualization</span>
                       </div>
                     </ScrollReveal>

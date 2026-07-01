@@ -89,8 +89,8 @@ export default function Header() {
                   href={item.href}
                   className={`px-4 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-200 flex items-center gap-1 ${
                     isActive(item.href)
-                      ? 'text-[#cc0000]'
-                      : 'text-[#333] hover:text-[#cc0000]'
+                      ? 'text-[#005bb5]'
+                      : 'text-[#333] hover:text-[#005bb5]'
                   }`}
                 >
                   {item.label}
@@ -108,7 +108,7 @@ export default function Header() {
                     {item.label === 'Products' ? (
                       <div className="absolute top-full left-0 mt-0 w-[700px] bg-white rounded-b-2xl p-4 shadow-xl border border-gray-200">
                         <div className="grid grid-cols-2 gap-3">
-                          <Link href="/products" className="col-span-2 px-3 py-2 text-sm font-semibold text-[#cc0000] hover:text-[#aa0000] rounded-lg hover:bg-red-50 transition-colors">
+                          <Link href="/products" className="col-span-2 px-3 py-2 text-sm font-semibold text-[#005bb5] hover:text-[#004999] rounded-lg hover:bg-red-50 transition-colors">
                             View All Products →
                           </Link>
                           {productCategories.map((cat) => (
@@ -117,13 +117,13 @@ export default function Header() {
                               href={`/products/${cat.slug}`}
                               className="block p-3 rounded-xl hover:bg-gray-50 transition-all group"
                             >
-                              <span className="text-sm font-semibold text-[#1a1a1a] group-hover:text-[#cc0000] transition-colors">{cat.name}</span>
+                              <span className="text-sm font-semibold text-[#1a1a1a] group-hover:text-[#005bb5] transition-colors">{cat.name}</span>
                               <div className="mt-1.5 space-y-0.5">
                                 {cat.subcategories.slice(0, 4).map((sub) => (
                                   <span key={sub.name} className="block text-xs text-[#888] truncate">{sub.name}</span>
                                 ))}
                                 {cat.subcategories.length > 4 && (
-                                  <span className="text-xs text-[#cc0000]">+{cat.subcategories.length - 4} more</span>
+                                  <span className="text-xs text-[#005bb5]">+{cat.subcategories.length - 4} more</span>
                                 )}
                               </div>
                             </Link>
@@ -136,7 +136,7 @@ export default function Header() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2.5 text-sm text-[#555] hover:text-[#cc0000] hover:bg-red-50 rounded-lg transition-all duration-200"
+                            className="block px-4 py-2.5 text-sm text-[#555] hover:text-[#005bb5] hover:bg-red-50 rounded-lg transition-all duration-200"
                           >
                             {child.label}
                           </Link>
@@ -153,9 +153,9 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${companyInfo.contact.phone}`}
-              className="flex items-center gap-2 text-sm font-medium text-[#555] hover:text-[#cc0000] transition-colors"
+              className="flex items-center gap-2 text-sm font-medium text-[#555] hover:text-[#005bb5] transition-colors"
             >
-              <HiPhone className="w-4 h-4 text-[#cc0000]" />
+              <HiPhone className="w-4 h-4 text-[#005bb5]" />
               <span>(+91) {companyInfo.contact.phone}</span>
             </a>
           </div>
@@ -163,7 +163,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-[#555] hover:text-[#cc0000] transition-colors"
+            className="lg:hidden p-2 text-[#555] hover:text-[#005bb5] transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <HiX className="w-6 h-6" /> : <HiOutlineMenuAlt3 className="w-6 h-6" />}
@@ -193,8 +193,8 @@ export default function Header() {
                     }}
                     className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold uppercase tracking-wide transition-all ${
                       isActive(item.href)
-                        ? 'text-[#cc0000] bg-red-50'
-                        : 'text-[#333] hover:text-[#cc0000] hover:bg-red-50'
+                        ? 'text-[#005bb5] bg-red-50'
+                        : 'text-[#333] hover:text-[#005bb5] hover:bg-red-50'
                     }`}
                   >
                     {item.label}
@@ -210,13 +210,13 @@ export default function Header() {
                     <div className="ml-4 mt-1 space-y-1">
                       {item.label === 'Products' ? (
                         <>
-                          <Link href="/products" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-sm font-semibold text-[#cc0000] rounded-lg">View All Products →</Link>
+                          <Link href="/products" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-sm font-semibold text-[#005bb5] rounded-lg">View All Products →</Link>
                           {productCategories.map((cat) => (
                             <div key={cat.id}>
                               <Link
                                 href={`/products/${cat.slug}`}
                                 onClick={() => setIsOpen(false)}
-                                className="block px-4 py-2 text-sm font-semibold text-[#1a1a1a] hover:text-[#cc0000] rounded-lg hover:bg-red-50"
+                                className="block px-4 py-2 text-sm font-semibold text-[#1a1a1a] hover:text-[#005bb5] rounded-lg hover:bg-red-50"
                               >
                                 {cat.name}
                               </Link>
@@ -234,7 +234,7 @@ export default function Header() {
                             key={child.href}
                             href={child.href}
                             onClick={() => setIsOpen(false)}
-                            className="block px-4 py-2.5 text-sm text-[#555] hover:text-[#cc0000] hover:bg-red-50 rounded-lg"
+                            className="block px-4 py-2.5 text-sm text-[#555] hover:text-[#005bb5] hover:bg-red-50 rounded-lg"
                           >
                             {child.label}
                           </Link>
@@ -249,14 +249,14 @@ export default function Header() {
                   href={`tel:${companyInfo.contact.phone}`}
                   className="flex items-center gap-2 px-4 py-2 text-sm text-[#555]"
                 >
-                  <HiPhone className="w-4 h-4 text-[#cc0000]" />
+                  <HiPhone className="w-4 h-4 text-[#005bb5]" />
                   {companyInfo.contact.phone}
                 </a>
                 <a
                   href={`mailto:${companyInfo.contact.email}`}
                   className="flex items-center gap-2 px-4 py-2 text-sm text-[#555]"
                 >
-                  <HiMail className="w-4 h-4 text-[#cc0000]" />
+                  <HiMail className="w-4 h-4 text-[#005bb5]" />
                   {companyInfo.contact.email}
                 </a>
               </div>
