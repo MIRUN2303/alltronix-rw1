@@ -355,6 +355,61 @@ const panelDescriptions = [
   'Intelligent Urban Infrastructure',
 ]
 
+const industryIllustrations = [
+  <svg key="automation" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <rect x="2" y="2" width="8" height="8" rx="1" />
+    <rect x="14" y="2" width="8" height="8" rx="1" />
+    <rect x="2" y="14" width="8" height="8" rx="1" />
+    <rect x="14" y="14" width="8" height="8" rx="1" />
+    <path d="M6 10v4M10 12H6M18 10v4M22 12h-4" />
+    <circle cx="6" cy="12" r="1" fill="currentColor" />
+    <circle cx="18" cy="12" r="1" fill="currentColor" />
+    <path d="M10 6h4" />
+    <path d="M12 2v4M12 18v4" />
+  </svg>,
+  <svg key="railways" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <rect x="3" y="9" width="18" height="6" rx="1" />
+    <rect x="5" y="5" width="14" height="5" rx="1" />
+    <circle cx="8" cy="15" r="2" fill="currentColor" />
+    <circle cx="16" cy="15" r="2" fill="currentColor" />
+    <line x1="3" y1="15" x2="3" y2="19" />
+    <line x1="21" y1="15" x2="21" y2="19" />
+    <line x1="3" y1="19" x2="21" y2="19" />
+    <circle cx="12" cy="7" r="1.5" fill="currentColor" />
+  </svg>,
+  <svg key="defence" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>,
+  <svg key="iot" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 9V5M12 19v-4M15 12h4M5 12h4" />
+    <circle cx="5" cy="5" r="2" />
+    <circle cx="19" cy="5" r="2" />
+    <circle cx="5" cy="19" r="2" />
+    <circle cx="19" cy="19" r="2" />
+    <line x1="7" y1="7" x2="9.5" y2="9.5" />
+    <line x1="17" y1="7" x2="14.5" y2="9.5" />
+    <line x1="7" y1="17" x2="9.5" y2="14.5" />
+    <line x1="17" y1="17" x2="14.5" y2="14.5" />
+  </svg>,
+  <svg key="renewable" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+    <path d="M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12" />
+    <path d="M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
+    <path d="M12 12l3-3M12 12l-2 4" opacity="0.5" />
+  </svg>,
+  <svg key="smartcity" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <rect x="3" y="10" width="4" height="11" rx="0.5" />
+    <rect x="10" y="6" width="4" height="15" rx="0.5" />
+    <rect x="17" y="12" width="4" height="9" rx="0.5" />
+    <path d="M5 10V7l7-4 7 4v3" />
+    <line x1="3" y1="21" x2="21" y2="21" />
+    <circle cx="12" cy="4" r="0.8" fill="currentColor" />
+  </svg>,
+]
+
 function Slide1Grid({ panels, onAdvance }: { panels: NonNullable<typeof bannerSlides[0]['panels']>, onAdvance?: () => void }) {
   const [active, setActive] = useState(0)
   const [hovered, setHovered] = useState(false)
@@ -406,15 +461,16 @@ function Slide1Grid({ panels, onAdvance }: { panels: NonNullable<typeof bannerSl
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
               />
               <div className="flex-1 flex items-center gap-3 py-[11px] pr-3">
-                <div className={`flex-shrink-0 w-9 h-9 rounded-lg overflow-hidden transition-all duration-500 ${
-                  isOn ? 'shadow-lg' : ''
+                <div className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-500 ${
+                  isOn
+                    ? 'shadow-lg'
+                    : 'bg-black/30'
                 }`}
-                  style={isOn ? { boxShadow: `0 0 0 2px ${accent.hex}` } : {}}
+                  style={isOn ? { boxShadow: `0 0 0 2px ${accent.hex}`, backgroundColor: `${accent.hex}25` } : {}}
                 >
-                  <div
-                    className="w-full h-full bg-cover bg-center"
-                    style={{ backgroundImage: `url('${p.bg}')` }}
-                  />
+                  <span className={isOn ? 'text-white' : 'text-white/60'}>
+                    {industryIllustrations[i]}
+                  </span>
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className={`text-xs lg:text-sm font-bold tracking-wide transition-all duration-500 ${
@@ -455,96 +511,58 @@ function Slide1Grid({ panels, onAdvance }: { panels: NonNullable<typeof bannerSl
         />
       </div>
 
-      {/* ─── Right: Image Panel ─── */}
-      <div className="hidden lg:block relative flex-1 overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
-            className="absolute inset-0"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url('${panels[active].bg}')` }}
-            />
-            <div className={`absolute inset-0 bg-gradient-to-br ${panels[active].fallbackGradient} opacity-50`} />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#001a33]/80 via-[#001a33]/40 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#001a33]/70 via-transparent to-transparent" />
-
-            {/* Accent color edge glow from left */}
-            <div
-              className="absolute left-0 top-0 bottom-0 w-[3px]"
-              style={{
-                background: `linear-gradient(to bottom, transparent, ${accentColors[active].hex}, transparent)`,
-                boxShadow: `0 0 30px ${accentColors[active].hex}`,
-              }}
-            />
-
-            {/* Content */}
-            <div className="absolute inset-0 flex flex-col justify-center p-12 lg:p-16 xl:p-20">
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
-                className="text-6xl mb-5"
-              >
-                {panels[active].emoji}
-              </motion.span>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-white font-black text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight max-w-lg"
-              >
-                {panels[active].label}
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25 }}
-                className="mt-3 text-white/60 text-base lg:text-lg max-w-md leading-relaxed"
-              >
-                {panelDescriptions[active]}
-              </motion.p>
-              <motion.a
-                href="/solutions"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-lg text-sm font-semibold text-white transition-all w-fit"
-                style={{ backgroundColor: accentColors[active].hex }}
-                whileHover={{ gap: '14px', opacity: 0.9 }}
-              >
-                Explore Solutions
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </motion.a>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Bottom pagination */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10">
-          {panels.map((_, i) => (
+      {/* ─── Right: 6 individual industry images aligned to rows ─── */}
+      <div className="hidden lg:flex relative flex-1 flex-col justify-center gap-[10px] px-3 overflow-hidden">
+        {panels.map((p, i) => {
+          const isOn = i === active
+          const accent = accentColors[i]
+          return (
             <button
-              key={i}
+              key={p.label}
               onClick={() => setActive(i)}
-              className="relative group"
-              aria-label={`Go to ${panels[i].label}`}
+              className={`relative flex-1 rounded-xl overflow-hidden transition-all duration-500 group ${
+                isOn ? 'ring-2 shadow-lg scale-[1.02] z-10' : 'opacity-40 hover:opacity-70'
+              }`}
+              style={isOn ? { boxShadow: `0 0 24px ${accent.hex}40, inset 0 0 0 2px ${accent.hex}` } : {}}
             >
-              <div
-                className={`rounded-full transition-all duration-500 ${
-                  i === active ? 'w-8 h-[6px]' : 'w-[6px] h-[6px] bg-white/20 group-hover:bg-white/40'
-                }`}
-                style={i === active ? { backgroundColor: accentColors[i].hex } : {}}
+              <img
+                src={p.bg}
+                alt={p.label}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => {
+                  const el = e.target as HTMLImageElement
+                  el.style.display = 'none'
+                }}
               />
+              <div className={`absolute inset-0 bg-gradient-to-br ${p.fallbackGradient} opacity-30`} />
+              <div className={`absolute inset-0 transition-all duration-500 ${
+                isOn ? 'bg-gradient-to-r from-black/60 via-black/20 to-transparent' : 'bg-black/50'
+              }`} />
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 text-right">
+                <p className={`text-white font-bold tracking-tight leading-tight transition-all duration-500 ${
+                  isOn ? 'text-base' : 'text-xs'
+                }`}>
+                  {p.label}
+                </p>
+                <p className={`text-white/60 leading-tight transition-all duration-500 ${
+                  isOn ? 'text-xs mt-0.5' : 'text-[10px] mt-0'
+                }`}>
+                  {panelDescriptions[i]}
+                </p>
+              </div>
+              {/* Accent glow on active */}
+              {isOn && (
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-1"
+                  style={{
+                    background: `linear-gradient(to bottom, ${accent.hex}, transparent)`,
+                    boxShadow: `0 0 16px ${accent.hex}`,
+                  }}
+                />
+              )}
             </button>
-          ))}
-        </div>
+          )
+        })}
       </div>
 
       {/* ─── Mobile: Compact list ─── */}
@@ -568,8 +586,9 @@ function Slide1Grid({ panels, onAdvance }: { panels: NonNullable<typeof bannerSl
                   style={isOn ? { backgroundColor: accentColors[i].hex } : {}}
                 />
                 <div className="flex-1 min-w-0">
-                  <div className={`text-sm font-semibold transition-colors ${isOn ? 'text-white' : 'text-white/50'}`}>
-                    {p.emoji} {p.label}
+                  <div className={`flex items-center gap-2 text-sm font-semibold transition-colors ${isOn ? 'text-white' : 'text-white/50'}`}>
+                    <span className="w-4 h-4 flex items-center justify-center">{industryIllustrations[i]}</span>
+                    {p.label}
                   </div>
                 </div>
               </button>
