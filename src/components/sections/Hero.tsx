@@ -11,44 +11,51 @@ const bannerSlides = [
     panels: [
       {
         label: 'INDUSTRIAL AUTOMATION',
-        bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/Factory-Automation.jpg',
+        bg: '/images/hero/industrial-automation.jpg',
         fallbackGradient: 'from-blue-950 to-blue-800',
         emoji: '⚙️',
         svg: '',
       },
       {
         label: 'RAILWAYS',
-        bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/railway.jpg',
-        fallbackGradient: 'from-[#001a33] to-[#003d7a]',
+        bg: '/images/hero/railways.jpg',
+        fallbackGradient: 'from-red-950 to-red-800',
         emoji: '🚄',
         svg: '',
       },
       {
         label: 'DEFENCE',
-        bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/defence.jpg',
+        bg: '/images/hero/defence.jpg',
         fallbackGradient: 'from-blue-900 to-slate-800',
         emoji: '🛡️',
         svg: '',
       },
       {
         label: 'INDUSTRIAL IOT',
-        bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/industrial-iot.jpg',
-        fallbackGradient: 'from-blue-950 to-[#cc0000]',
+        bg: '/images/hero/industrial-iot.jpg',
+        fallbackGradient: 'from-blue-950 to-red-800',
         emoji: '🌐',
         svg: '',
       },
       {
         label: 'RENEWABLE',
-        bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/renewable.jpg',
-        fallbackGradient: 'from-[#002244] to-blue-900',
+        bg: '/images/hero/renewable.jpg',
+        fallbackGradient: 'from-red-950 to-red-900',
         emoji: '☀️',
         svg: '',
       },
       {
         label: 'SMART CITY',
-        bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/smart-city.jpg',
-        fallbackGradient: 'from-[#001a33] to-blue-800',
+        bg: '/images/hero/smart-city.jpg',
+        fallbackGradient: 'from-red-950 to-red-800',
         emoji: '🏙️',
+        svg: '',
+      },
+      {
+        label: 'ELECTRO MOBILITY',
+        bg: '/images/hero/e-mobility.jpg',
+        fallbackGradient: 'from-teal-700 to-green-600',
+        emoji: '🔌',
         svg: '',
       },
     ],
@@ -252,7 +259,7 @@ export default function Hero() {
   )
 }
 
-/* ───── Slide 1: Premium rework — 6 rows left + image right ───── */
+/* ───── Slide 1: Premium rework — 7 rows left + image right ───── */
 const accentColors = [
   { hex: '#cc0000', label: 'brandred' },
   { hex: '#990000', label: 'darkred' },
@@ -260,6 +267,7 @@ const accentColors = [
   { hex: '#b30000', label: 'crimson' },
   { hex: '#ff1a1a', label: 'lightred' },
   { hex: '#ff4d4d', label: 'palered' },
+  { hex: '#800000', label: 'maroon' },
 ]
 
 const panelDescriptions = [

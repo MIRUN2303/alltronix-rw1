@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --brand-50: #eff6ff;
-  --brand-100: #dbeafe;
-  --brand-200: #bfdbfe;
-  --brand-300: #93c5fd;
-  --brand-400: #60a5fa;
-  --brand-500: #0072e3;
-  --brand-600: #2563eb;
-  --brand-700: #005bb5;
-  --brand-800: #004999;
-  --brand-900: #003d7a;
-  --brand-950: #002244;
+  --brand-50: #fff0f0;
+  --brand-100: #ffdbdb;
+  --brand-200: #ffb8b8;
+  --brand-300: #ff8a8a;
+  --brand-400: #ff5252;
+  --brand-500: #e60000;
+  --brand-600: #cc0000;
+  --brand-700: #b30000;
+  --brand-800: #990000;
+  --brand-900: #800000;
+  --brand-950: #4d0000;
 
   --background: #ffffff;
   --surface: #f8f8f8;
@@ -220,7 +220,7 @@ body {
 }
 
 *:focus-visible {
-  outline: 2px solid #005bb5;
+  outline: 2px solid #cc0000;
   outline-offset: 2px;
   border-radius: 4px;
 }
