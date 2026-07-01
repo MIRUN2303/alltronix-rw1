@@ -85,9 +85,9 @@ export default function Header() {
               </Link>
 
               {item.children && activeDropdown === item.label && (
-                <>
+                <div className="absolute top-full left-0 pt-2">
                   {item.label === 'Products' ? (
-                    <div className="absolute top-full left-0 mt-2 w-[580px] glass-grain rounded-2xl p-3">
+                    <div className="w-[580px] glass-grain rounded-2xl p-3">
                       <div className="grid grid-cols-2 gap-3">
                         <Link href="/products" className="col-span-2 px-3 py-2 text-sm font-semibold text-[#cc0000] hover:text-[#990000] rounded-lg hover:bg-[#cc0000]/8 transition-colors">
                           View All Products →
@@ -114,7 +114,7 @@ export default function Header() {
                       </div>
                     </div>
                   ) : (
-                    <div className="absolute top-full left-0 mt-2 w-52 glass-grain rounded-xl p-1">
+                    <div className="w-52 glass-grain rounded-xl p-1">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
@@ -126,7 +126,7 @@ export default function Header() {
                       ))}
                     </div>
                   )}
-                </>
+                </div>
               )}
             </div>
           ))}
