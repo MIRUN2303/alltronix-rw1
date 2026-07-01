@@ -80,8 +80,9 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Form */}
-              <div className="h-full">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+              <div className="flex flex-col h-full">
+                <div className="mt-auto">
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                   <GlassCard className="p-8 lg:p-10">
                     {submitted ? (
                       <div className="text-center py-16">
@@ -131,6 +132,7 @@ export default function ContactPage() {
                     )}
                   </GlassCard>
                 </motion.div>
+                </div>
               </div>
             </div>
           </div>
