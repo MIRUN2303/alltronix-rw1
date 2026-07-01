@@ -87,32 +87,29 @@ export default function Header() {
               {item.children && activeDropdown === item.label && (
                 <>
                   {item.label === 'Products' ? (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[620px] glass-grain rounded-2xl p-4">
-                      <div className="flex items-center justify-between mb-3 px-1">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-muted">Product Categories</span>
-                        <Link href="/products" className="text-xs font-semibold text-[#cc0000] hover:text-[#990000] transition-colors">
-                          View All →
+                    <div className="absolute top-full left-0 mt-2 w-[580px] glass-grain rounded-2xl p-3">
+                      <div className="grid grid-cols-2 gap-3">
+                        <Link href="/products" className="col-span-2 px-3 py-2 text-sm font-semibold text-[#cc0000] hover:text-[#990000] rounded-lg hover:bg-[#cc0000]/8 transition-colors">
+                          View All Products →
                         </Link>
-                      </div>
-                      <div className="grid grid-cols-2 gap-2">
                         {productCategories.map((cat) => (
-                          <Link
-                            key={cat.id}
-                            href={`/products/${cat.slug}`}
-                            className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#cc0000]/5 transition-all duration-200 group"
-                          >
-                            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#cc0000]/15 to-[#e60000]/8 flex items-center justify-center shrink-0 text-base group-hover:scale-110 transition-transform duration-200">
-                              {cat.id === 'automate' && <svg className="w-5 h-5 text-[#cc0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
-                              {cat.id === 'connect' && <svg className="w-5 h-5 text-[#cc0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>}
-                              {cat.id === 'mark-assemble-and-install' && <svg className="w-5 h-5 text-[#cc0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
-                              {cat.id === 'supply-charge-and-protect' && <svg className="w-5 h-5 text-[#cc0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}
-                              {cat.id === 'switch-measure-and-monitor' && <svg className="w-5 h-5 text-[#cc0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>}
+                          <div key={cat.id} className="block p-3 rounded-xl hover:bg-gray-50/50 transition-all group">
+                            <Link href={`/products/${cat.slug}`} className="text-sm font-semibold text-primary hover:text-[#cc0000] transition-colors">{cat.name}</Link>
+                            <div className="mt-1.5 space-y-0.5">
+                              {cat.subcategories.slice(0, 4).map((sub) => (
+                                <Link
+                                  key={sub.name}
+                                  href={`/products/${cat.slug}#${sub.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                  className="block text-xs text-muted hover:text-[#cc0000] truncate transition-colors"
+                                >
+                                  {sub.name}
+                                </Link>
+                              ))}
+                              {cat.subcategories.length > 4 && (
+                                <Link href={`/products/${cat.slug}`} className="block text-xs text-[#cc0000] hover:text-[#990000] transition-colors mt-1">+{cat.subcategories.length - 4} more</Link>
+                              )}
                             </div>
-                            <div className="min-w-0">
-                              <div className="text-sm font-semibold text-primary group-hover:text-[#cc0000] transition-colors truncate">{cat.name}</div>
-                              <div className="text-[11px] text-muted truncate mt-0.5">{cat.subcategories.length} subcategories</div>
-                            </div>
-                          </Link>
+                          </div>
                         ))}
                       </div>
                     </div>
