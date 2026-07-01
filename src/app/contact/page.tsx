@@ -81,7 +81,7 @@ export default function ContactPage() {
 
               {/* Contact Form */}
               <div className="flex flex-col h-full">
-                <div className="mt-auto">
+                <div className="mt-16 lg:mt-24">
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                   <GlassCard className="p-8 lg:p-10">
                     {submitted ? (
