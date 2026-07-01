@@ -43,7 +43,7 @@ const focusedIndustries = [
     image: 'https://www.alltronix.com/wp-content/uploads/2020/09/Factory-Automation.jpg',
     fallbackGradient: 'from-blue-800 to-slate-700',
     description: 'Complete automation solutions for manufacturing and process industries.',
-    accent: '#005bb5',
+    accent: '#cc0000',
   },
   {
     name: 'Industrial Networking',
@@ -72,7 +72,7 @@ export default function SolutionsSection() {
         >
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-secondary">OUR SOLUTIONS</span>
-            <div className="w-10 h-0.5 bg-[#005bb5]" />
+            <div className="w-10 h-0.5 bg-[#cc0000]" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary">
             Focused Industries
@@ -217,7 +217,7 @@ export default function SolutionsSection() {
         >
           <Link
             href="/solutions"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#005bb5] text-white font-semibold rounded-lg hover:bg-[#004999] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#005bb5]/30 text-sm"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#cc0000] text-white font-semibold rounded-lg hover:bg-[#990000] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#cc0000]/30 text-sm"
           >
             View All Solutions
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

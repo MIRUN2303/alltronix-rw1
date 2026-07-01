@@ -43,7 +43,7 @@ export default function EwastePage() {
                 placeholder="Search by state or location..."
                 value={searchState}
                 onChange={(e) => setSearchState(e.target.value)}
-                className="w-full max-w-md px-4 py-3 rounded-xl bg-surface border border-[rgba(204,0,0,0.12)] text-primary placeholder-[#999] focus:outline-none focus:border-[#005bb5] focus:ring-1 focus:ring-[#005bb5] transition-all mb-8"
+                className="w-full max-w-md px-4 py-3 rounded-xl bg-surface border border-[rgba(204,0,0,0.12)] text-primary placeholder-[#999] focus:outline-none focus:border-[#cc0000] focus:ring-1 focus:ring-[#cc0000] transition-all mb-8"
               />
             </div>
 
@@ -66,7 +66,7 @@ export default function EwastePage() {
                       <td className="px-6 py-4 text-sm text-secondary">{point.location}</td>
                       <td className="px-6 py-4 text-sm text-secondary hidden md:table-cell max-w-xs truncate">{point.address}</td>
                       <td className="px-6 py-4 text-sm text-secondary hidden lg:table-cell">{point.representative}</td>
-                      <td className="px-6 py-4 text-sm text-[#005bb5]">{point.phone}</td>
+                      <td className="px-6 py-4 text-sm text-[#cc0000]">{point.phone}</td>
                     </tr>
                   ))}
                 </tbody>

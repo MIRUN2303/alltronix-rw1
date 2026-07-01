@@ -48,7 +48,7 @@ export default function BrandsSection() {
               {doubled.map((brand, i) => (
                 <div
                   key={`r1-${i}`}
-                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-subtle rounded-xl hover:border-[#005bb5]/30 hover:shadow-md transition-all duration-300 group"
+                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-subtle rounded-xl hover:border-[#cc0000]/30 hover:shadow-md transition-all duration-300 group"
                 >
                   <img
                     src={brand.logo}
@@ -80,7 +80,7 @@ export default function BrandsSection() {
               {[...doubled].reverse().map((brand, i) => (
                 <div
                   key={`r2-${i}`}
-                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-subtle rounded-xl hover:border-[#005bb5]/30 hover:shadow-md transition-all duration-300 group"
+                  className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 w-36 h-24 bg-white border border-subtle rounded-xl hover:border-[#cc0000]/30 hover:shadow-md transition-all duration-300 group"
                 >
                   <img
                     src={brand.logo}
@@ -111,7 +111,7 @@ export default function BrandsSection() {
         >
           <Link
             href="/brands"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#005bb5] text-white font-semibold rounded-lg hover:bg-[#004999] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#005bb5]/30 text-sm"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#cc0000] text-white font-semibold rounded-lg hover:bg-[#990000] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#cc0000]/30 text-sm"
           >
             View All 31+ Partners
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

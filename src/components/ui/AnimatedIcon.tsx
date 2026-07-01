@@ -25,9 +25,9 @@ export default function AnimatedIcon({
       whileInView={{ scale: 1 }}
       viewport={{ once: true }}
       transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-      className={`flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#005bb5]/15 to-[#0072e3]/8 border border-[#005bb5]/15 ${sizes[size]} ${className}`}
+      className={`flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#cc0000]/15 to-[#e60000]/8 border border-[#cc0000]/15 ${sizes[size]} ${className}`}
     >
-      <div className="text-[#005bb5]">
+      <div className="text-[#cc0000]">
         {icon}
       </div>
     </motion.div>

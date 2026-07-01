@@ -36,7 +36,7 @@ export default function BrandsPage() {
                         }}
                       />
                     </div>
-                    <h3 className="text-lg font-semibold text-primary group-hover:text-[#005bb5] transition-colors text-center">{brand.name}</h3>
+                    <h3 className="text-lg font-semibold text-primary group-hover:text-[#cc0000] transition-colors text-center">{brand.name}</h3>
                     <p className="text-sm text-secondary mt-3 leading-relaxed text-center">{brand.description}</p>
                   </GlassCard>
                 </ScrollReveal>

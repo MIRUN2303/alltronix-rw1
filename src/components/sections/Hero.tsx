@@ -33,7 +33,7 @@ const bannerSlides = [
       {
         label: 'INDUSTRIAL IOT',
         bg: 'https://www.alltronix.com/wp-content/uploads/2020/09/industrial-iot.jpg',
-        fallbackGradient: 'from-blue-950 to-[#005bb5]',
+        fallbackGradient: 'from-blue-950 to-[#cc0000]',
         emoji: '🌐',
         svg: '',
       },
@@ -221,7 +221,7 @@ export default function Hero() {
             aria-label={`Go to slide ${i + 1}`}
             className={`relative rounded-full transition-all duration-500 ${
                i === current
-                  ? 'w-10 h-3 bg-[#005bb5]'
+                  ? 'w-10 h-3 bg-[#cc0000]'
                  : 'w-3 h-3 bg-white/30 hover:bg-white/60'
             }`}
           />
@@ -254,12 +254,12 @@ export default function Hero() {
 
 /* ───── Slide 1: Premium rework — 6 rows left + image right ───── */
 const accentColors = [
-  { hex: '#003d7a', label: 'navy' },
   { hex: '#cc0000', label: 'brandred' },
-  { hex: '#005bb5', label: 'brandblue' },
-  { hex: '#0072e3', label: 'azure' },
-  { hex: '#1a8cff', label: 'skyblue' },
-  { hex: '#47a3ff', label: 'lightblue' },
+  { hex: '#990000', label: 'darkred' },
+  { hex: '#e60000', label: 'brightred' },
+  { hex: '#b30000', label: 'crimson' },
+  { hex: '#ff1a1a', label: 'lightred' },
+  { hex: '#ff4d4d', label: 'palered' },
 ]
 
 const panelDescriptions = [

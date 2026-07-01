@@ -62,10 +62,10 @@ export default function Button({
   const baseStyles = 'relative inline-flex items-center justify-center font-medium overflow-hidden transition-all duration-300 rounded-xl'
   
   const variants = {
-    primary: 'bg-gradient-to-r from-[#005bb5] to-[#0072e3] text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5',
+    primary: 'bg-gradient-to-r from-[#cc0000] to-[#e60000] text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5',
     secondary: 'bg-[#1a1a1a] text-white border border-[#333] hover:bg-[#333] hover:border-[#555]',
-    outline: 'bg-transparent text-[#005bb5] border border-[#005bb5]/30 hover:bg-red-50 hover:border-[#005bb5]/50',
-    ghost: 'bg-transparent text-muted hover:text-[#005bb5] hover:bg-red-50',
+    outline: 'bg-transparent text-[#cc0000] border border-[#cc0000]/30 hover:bg-red-50 hover:border-[#cc0000]/50',
+    ghost: 'bg-transparent text-muted hover:text-[#cc0000] hover:bg-red-50',
   }
 
   const sizes = {

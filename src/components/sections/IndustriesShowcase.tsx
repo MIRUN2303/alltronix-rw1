@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { industries } from '@/data/industries'
 
 const industryColors = [
-  { from: '#dc2626', to: '#0072e3' },
+  { from: '#dc2626', to: '#e60000' },
   { from: '#059669', to: '#10b981' },
   { from: '#7c3aed', to: '#a855f7' },
   { from: '#d97706', to: '#f59e0b' },
@@ -134,10 +134,10 @@ export default function IndustriesShowcase() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-[#005bb5]">Industries We Serve</span>
+          <span className="text-xs font-semibold tracking-widest uppercase text-[#cc0000]">Industries We Serve</span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">
             Engineering Solutions Across{' '}
-            <span className="bg-gradient-to-r from-[#005bb5] to-[#0072e3] bg-clip-text text-transparent">Critical Sectors</span>
+            <span className="bg-gradient-to-r from-[#cc0000] to-[#e60000] bg-clip-text text-transparent">Critical Sectors</span>
           </h2>
         </motion.div>
 
@@ -322,7 +322,7 @@ export default function IndustriesShowcase() {
               onClick={() => setActive(i)}
               className={`p-3 rounded-xl text-center transition-all border ${
                 i === active
-                  ? 'border-[#005bb5]/30 bg-[#005bb5]/10 text-primary'
+                  ? 'border-[#cc0000]/30 bg-[#cc0000]/10 text-primary'
                   : 'border-subtle text-muted'
               }`}
             >

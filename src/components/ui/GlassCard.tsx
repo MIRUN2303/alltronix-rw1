@@ -49,7 +49,7 @@ export default function GlassCard({
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-2xl border border-subtle bg-white backdrop-blur-xl ${hover ? 'hover:border-[#005bb5]/30 hover:shadow-md hover:-translate-y-1 transition-all duration-500' : ''} ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-subtle bg-white backdrop-blur-xl ${hover ? 'hover:border-[#cc0000]/30 hover:shadow-md hover:-translate-y-1 transition-all duration-500' : ''} ${className}`}
       style={{
         transform: tilt ? `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)` : undefined,
         transition: 'transform 0.1s ease-out',

@@ -152,7 +152,7 @@ body {
 }
 
 .gradient-text-accent {
-  background: linear-gradient(135deg, #005bb5 0%, #0072e3 100%);
+  background: linear-gradient(135deg, #cc0000 0%, #e60000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
