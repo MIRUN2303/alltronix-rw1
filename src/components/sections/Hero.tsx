@@ -103,9 +103,10 @@ export default function Hero() {
   }, [])
 
   useEffect(() => {
-    const timer = setInterval(next, 6000)
+    if (current === 0) return
+    const timer = setInterval(next, 7000)
     return () => clearInterval(timer)
-  }, [next])
+  }, [current, next])
 
   const slide = bannerSlides[current]
 
@@ -124,7 +125,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
             className="absolute inset-0"
           >
-            <Slide1Grid panels={slide.panels!} />
+            <Slide1Grid panels={slide.panels!} onAdvance={next} />
           </motion.div>
         )}
 
@@ -184,7 +185,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.1 }}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.92] tracking-tight"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[0.95] tracking-tight max-w-4xl"
                   >
                     {slide.headline}{' '}
                     <span className="text-[#0080ff]">{slide.subline}</span>
@@ -194,7 +195,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
-                    className="mt-6 text-base sm:text-lg lg:text-xl text-white/70 leading-relaxed max-w-2xl"
+                    className="mt-4 text-sm sm:text-base lg:text-lg text-white/70 leading-relaxed max-w-xl"
                   >
                     {slide.description}
                   </motion.p>
@@ -203,20 +204,20 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.35 }}
-                    className="mt-10 flex flex-wrap gap-4"
+                    className="mt-6 flex flex-wrap gap-3"
                   >
                     <Link
                       href="/solutions"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#005bb5] text-white font-semibold rounded-lg hover:bg-[#004999] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#005bb5]/30 text-sm sm:text-base"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#005bb5] text-white font-semibold rounded-lg hover:bg-[#004999] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#005bb5]/30 text-xs sm:text-sm"
                     >
                       Explore Solutions
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </Link>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all hover:-translate-y-0.5 text-sm sm:text-base backdrop-blur-sm"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all hover:-translate-y-0.5 text-xs sm:text-sm backdrop-blur-sm"
                     >
                       Contact Us
                     </Link>
@@ -227,7 +228,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.5 }}
-                    className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6"
+                    className="mt-6 pt-5 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4"
                   >
                     {[
                       { value: '48+', label: 'Years of Excellence' },
@@ -236,8 +237,8 @@ export default function Hero() {
                       { value: '15+', label: 'Industries Served' },
                     ].map((stat) => (
                       <div key={stat.label}>
-                        <div className="text-2xl sm:text-3xl font-black text-white">{stat.value}</div>
-                        <div className="text-xs text-white/50 mt-0.5">{stat.label}</div>
+                        <div className="text-lg sm:text-xl lg:text-2xl font-black text-white">{stat.value}</div>
+                        <div className="text-[10px] sm:text-xs text-white/50 mt-0.5">{stat.label}</div>
                       </div>
                     ))}
                   </motion.div>
@@ -262,27 +263,32 @@ export default function Hero() {
               <div
                 key={panel.label}
                 className="relative flex-1 overflow-hidden group cursor-pointer"
-                style={{
-                  backgroundImage: `url('${panel.bg}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${panel.fallbackGradient} opacity-50 group-hover:opacity-30 transition-opacity duration-500`} />
-                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition-all duration-500" />
+                <img
+                  src={panel.bg}
+                  alt={panel.label}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onError={(e) => {
+                    const el = e.target as HTMLImageElement
+                    el.style.display = 'none'
+                  }}
+                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${panel.fallbackGradient} opacity-60 group-hover:opacity-40 transition-opacity duration-500`} />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+                <div className="absolute top-5 left-5 text-3xl sm:text-4xl z-10">{panel.emoji}</div>
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1, duration: 0.5 }}
-                    className="text-white font-black text-xl sm:text-2xl lg:text-3xl tracking-tight drop-shadow-lg"
+                    className="text-white font-black text-lg sm:text-xl lg:text-2xl tracking-tight drop-shadow-lg"
                   >
                     {panel.label}
                   </motion.p>
                 </div>
                 {/* Divider line */}
                 {i < slide.panels!.length - 1 && (
-                  <div className="absolute right-0 top-0 bottom-0 w-px bg-white/20" />
+                  <div className="absolute right-0 top-0 bottom-0 w-px bg-white/20 z-10" />
                 )}
               </div>
             ))}
@@ -349,15 +355,24 @@ const panelDescriptions = [
   'Intelligent Urban Infrastructure',
 ]
 
-function Slide1Grid({ panels }: { panels: NonNullable<typeof bannerSlides[0]['panels']> }) {
+function Slide1Grid({ panels, onAdvance }: { panels: NonNullable<typeof bannerSlides[0]['panels']>, onAdvance?: () => void }) {
   const [active, setActive] = useState(0)
   const [hovered, setHovered] = useState(false)
 
   useEffect(() => {
     if (hovered) return
-    const timer = setInterval(() => setActive((p) => (p + 1) % panels.length), 4500)
+    const timer = setInterval(() => {
+      setActive((prev) => {
+        const next = (prev + 1) % panels.length
+        if (next === 0) {
+          onAdvance?.()
+          return prev
+        }
+        return next
+      })
+    }, 4500)
     return () => clearInterval(timer)
-  }, [hovered, panels.length])
+  }, [hovered, panels.length, onAdvance])
 
   return (
     <div
@@ -391,12 +406,15 @@ function Slide1Grid({ panels }: { panels: NonNullable<typeof bannerSlides[0]['pa
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
               />
               <div className="flex-1 flex items-center gap-3 py-[11px] pr-3">
-                <div className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-base transition-all duration-500 ${
-                  isOn ? 'shadow-lg' : 'bg-black/30'
+                <div className={`flex-shrink-0 w-9 h-9 rounded-lg overflow-hidden transition-all duration-500 ${
+                  isOn ? 'shadow-lg' : ''
                 }`}
-                  style={isOn ? { backgroundColor: `${accent.hex}25` } : {}}
+                  style={isOn ? { boxShadow: `0 0 0 2px ${accent.hex}` } : {}}
                 >
-                  {p.emoji}
+                  <div
+                    className="w-full h-full bg-cover bg-center"
+                    style={{ backgroundImage: `url('${p.bg}')` }}
+                  />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className={`text-xs lg:text-sm font-bold tracking-wide transition-all duration-500 ${

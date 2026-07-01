@@ -36,6 +36,27 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Hero Image */}
+        <section className="relative py-10">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-2xl aspect-[21/9] max-h-[500px]">
+              <img
+                src="https://www.alltronix.com/wp-content/uploads/2019/02/about.jpg"
+                alt="Alltronix facility"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const el = e.target as HTMLImageElement
+                  el.src = 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200&q=80'
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-white/80 text-sm max-w-xl">Since 1978, serving industry with engineering excellence from the control cabinet to the field level.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Company Story */}
         <section className="relative py-16 lg:py-20">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">

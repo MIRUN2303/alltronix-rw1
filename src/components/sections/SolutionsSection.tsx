@@ -102,12 +102,14 @@ export default function SolutionsSection() {
               >
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${industry.fallbackGradient} transition-transform duration-500 group-hover:scale-105`}
-                    style={{
-                      backgroundImage: `url('${industry.image}')`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
+                  <div className={`absolute inset-0 bg-gradient-to-br ${industry.fallbackGradient}`} />
+                  <img
+                    src={industry.image}
+                    alt={industry.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      const el = e.target as HTMLImageElement
+                      el.style.display = 'none'
                     }}
                   />
                   {/* Overlay on hover */}
