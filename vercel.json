@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "alltronicx.vercel.app"
+        }
+      ],
+      "destination": "https://alltronix.vercel.app/$1",
+      "permanent": true
+    }
+  ]
+}
